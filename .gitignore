@@ -1,0 +1,12 @@
+# Track only selected PDFs
+*
+!.gitignore
+!GovPurchases/
+!GovPurchases/Papers/
+!GovPurchases/Papers/*.pdf
+!GovPurchases/Slides/
+!GovPurchases/Slides/ngm_theory.pdf
+!Intro/
+!Intro/Slides/
+!Intro/Slides/slides_intro.pdf
+!syllabus_fmp_website_v3.pdf
