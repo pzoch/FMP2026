@@ -1,0 +1,447 @@
+\documentclass[11pt,xcolor={dvipsnames},aspectratio=159,hyperref={pdftex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+\usepackage{presentation}[aspectratio=169]
+\usepackage{math}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{mleftright}
+
+% Enter title of presentation PDF:
+\hypersetup{pdftitle={Price level}}
+% Enter link to PDF file with figures:
+
+
+\begin{document}
+% Enter presentation title:
+\title{Price level determination in a monetary economy}
+\subtitle{Fiscal and Monetary Policy 2024}
+% Enter presentation information:
+
+% Enter presentation authors:
+\author{Piotr Żoch}%
+% Enter presentation location and date (optional; comment line if not needed):
+\frame{\titlepage}
+
+% Fill out content of presentation:
+\begin{frame}{Plan}
+    \begin{itemize}
+    \item We study how the price level (and inflation) is determined in a monetary economy.
+    \item This will later serve us as a framework to study interactions of fiscal and monetary policy.
+    \item We will start with a very simple environment and then gradually add more features.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \heading{Endowment economy}
+\end{frame}
+
+\begin{frame}{Endowment economy}
+    \begin{itemize}
+    \item Every period there is an endowment of nonstorable goods $y_t$.
+    \item For simplicity assume $y_t = y$ for all $t$.
+    \item Let $P_t$ be the price level in period $t$: one unit of goods costs $P_t$ units of account.
+    \item There is a representative household that trades contingent claims (Arrow securities).
+    \item The household maximizes $$\E \sum_{t=0}^\infty \beta^t u\of{c_t}.$$
+    \item No government purchases of goods. 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Asset prices}
+\begin{itemize}
+        \item Let $q_{t,t+1}$ be the real price (in goods) of a claim that pays one unit of goods in period $t+1$ in a particular state of the world.
+        \item The nominal contingent claim price is \begin{align*}
+           Q_{t,t+1} = q_{t,t+1} \frac{P_t}{P_{t+1}}.
+        \end{align*}
+        \item The \al{nominal interest rate} $i_t$ satisfies \begin{align*}
+            \frac{1}{1+i_t} = \E_t Q_{t,t+1}.
+        \end{align*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Asset prices}
+\begin{itemize}
+        \item In this economy $c_t = y$.
+        \item The (real) SDF, $\beta u'\of{c_t+1}\slash u'\of{c_t}$, is constant and equal to $\beta$.
+        \item The \al{real interest rate}  $r$ is also constant and satisfies \begin{align*}
+            \frac{1}{1+r} = \beta.
+        \end{align*}
+        \item The \al{nominal discount factor} is $Q_{t,t+1} = \beta \frac{P_t}{P_{t+1}}$. 
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Asset prices}
+\begin{itemize}
+        \item We define gross inflation rate as 
+         \begin{align*}
+            \Pi_{t+1} \coloneq \frac{P_{t+1}}{P_t}.
+        \end{align*}
+        \item We obtain the \alb{Fisher equation}
+        \begin{align*}
+            \frac{1}{1+i_t} = \frac{1}{1+r} E_t \frac{P_{t}}{P_{t+1}} = \frac{1}{1+r} E_t\frac{1}{\Pi_{t+1}} = \beta  E_t\frac{1}{\Pi_{t+1}} .
+         \end{align*}
+        \item The usual formulation of the Fisher equation is obtained by linearization: 
+        \begin{align*}
+                i_t = r + \E_t \pi_{t+1}.
+        \end{align*}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Fisher equation}
+    \begin{itemize}
+        
+            \item In general, the Fisher equation is \begin{align*}
+                i_t = r_t + \E_t \pi_{t+1}.
+            \end{align*}
+            \item This is a no-arbitrage condition: you should be indifferent between two types of investment (real and nominal).
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Determinacy}
+    \begin{itemize}
+            \item In this endowment economy \begin{align*}
+                \frac{1}{1+i_t} = \beta  E_t\frac{1}{\Pi_{t+1}}
+            \end{align*}
+            is the \alb{only} equilibrium condition -- we already used goods market clearing.
+            \item What does it imply for the sequence of price levels $\bc{P_t}_{t=0}^\infty$?
+            \item In particular, we say that the level of inflation is \al{unique} or \al{determinate} in equilibrium if: \begin{enumerate}
+                \item There is a \al{unique} scalar $P_0$ in equilibrium.
+                \item If $\Pi^\prime$ and $\Pi^{\prime\prime}$ are two sequences that satisfy equilibrium conditions, then $\Pi^{\prime} = \Pi^{\prime\prime}$.
+            \end{enumerate}
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Determinacy}
+    \begin{itemize}
+            \item The question of determinacy may seem esoteric, but it is important.
+            \item It boils down to the question of whether \al{some policy can control prices}.
+            \item In this simple economy, the only available policy is the choice of the nominal interest rate.
+            \item Suppose we have some target for the price level (or inflation rate) -- can we achieve it by setting interest rates?
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Determinacy}
+    \begin{itemize}
+            \item Consider the simplest possible policy: \al{interest rate peg}.
+            \item The central bank sets $i_t = i$ for all $t$ -- it does not say it will \emph{respond} to something, it is \al{committed} to $i$ at all times in all states of the world.
+            \item We have \begin{align*}
+                \frac{1}{1+i} = \beta  E_t\frac{1}{\Pi_{t+1}}.
+            \end{align*}
+            \item This determines $E_t\frac{1}{\Pi_{t+1}}$  -- approximately the \alb{expected} inflation rate.
+            \item But it does \alr{not} determine $\Pi_{t+1}$ -- the \alb{actual} inflation rate.  
+            \item Agents expect $1\slash\Pi_t+1$ to be equal to $1/(1+i)$, but the actual inflation rate is \begin{align*}
+            \frac{1}{\Pi_{t+1}} = E_t\frac{1}{\Pi_{t+1}} + \epsilon_{t+1},\quad E_t\epsilon_{t+1} = 0. 
+        \end{align*}
+   
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Determinacy}
+        \begin{itemize}
+                \item What if we have \al{perfect foresight}? 
+                \item Then it is not a problem, because $\epsilon_{t+1} = 0$. 
+                \item For all $t\geq0$ $\Pi_{t+1}$ is determined by the peg, but $P_0$ is not (because $\Pi_0$ is not).
+                \item This is because we do not have a Fisher equation for $t=0$.
+                \item Conclusion: interest rate peg \alr{does not} ensure price level determinacy. 
+            \end{itemize}
+        \end{frame}
+
+    \begin{frame}{Determinacy}
+        \begin{itemize}
+                \item To simplify the analysis, we will now focus on \al{linearized} Fisher equation \begin{align*}
+                    i_t = r + \E_t \pi_{t+1}.
+                \end{align*}
+                \item Consider an \al{interest rate rule} $$i_t =  r + \phi \pi_t$$.
+                \item We call these rules \al{Taylor rules}. In general there can be other variables in the rule, and the intercept can be different than $r$.
+                \item Use the expression for $i_t$ in the Fisher equation to obtain \begin{align*}
+                 \phi \pi_t = \E_t \pi_{t+1}. 
+                \end{align*}
+            \end{itemize}
+        \end{frame}
+
+    \begin{frame}{Determinacy}
+        \begin{itemize}
+                \item We have the difference equation \begin{align*}
+                    \pi_t = \frac{1}{\phi}\E_t \pi_{t+1}. 
+                   \end{align*}
+                \item We can solve it \al{forward} as 
+                   \begin{align*}
+                    \pi_t = \lim_{T\to\infty} \phi^{-T} \E_t \pi_{t+T}.
+                   \end{align*} 
+                \item If $\phi>1$ \al{and} $E_t \pi_{t+T}$ \alr{does not diverge}, then $\pi_t=0$ for all $t$.
+            \end{itemize}
+        \end{frame}
+
+    \begin{frame}{Determinacy}
+        \begin{itemize}
+                \item If $\phi>1$ \al{and} $E_t \pi_{t+T}$ \alr{does not diverge}, inflation is determinate in all periods, even at $t=0$.
+                \item $\pi_0$ is determined, so $P_0$ is determined too. 
+                \item If the response of the interest rate to inflation is \al{strong enough}, $\phi>0$ then $\pi_t = 0$ for all $t$ is the only bounded solution.
+                \item We call $\phi>1$ the \al{Taylor principle}.
+                \item If $\phi<1$, then $\pi_t$ is \al{not} determined: there are multiple bounded solutions of the difference equation.
+                \item Where does $E_t \pi_{t+T}$ not diverging come from? 
+            \end{itemize}
+        \end{frame}
+
+    \begin{frame}{Determinacy}
+        \begin{itemize}
+                \item The terminal condition on $E_t \pi_{t+T}$ is \alr{not} an optimality condition. 
+                \item Even if $\phi>1$, but if the household for whatever reason expects inflation to diverge (i.e., hyperinflation), it will.
+                \item In this model $\phi>1$ has nothing to do with the logic like "increase real rates to reduce aggregate demand"
+                \item In a way, the central bank makes a threat: if you do not behave, I will make inflation explode. Is it reasonable? Is it how central banks do it?
+                \item See Cochrane (2011) for a discussion of Taylor rules.
+                \item My advice: you might not like the model (it is obviously simple) -- but do not apply some outside logic to understand these results!
+            \end{itemize}
+        \end{frame}
+
+        \begin{frame}{Determinacy}
+            \begin{itemize}
+                    \item The usual justification is that when inflation gets out of control, the central bank will switch to something else.
+                    \item But then, it is not a Taylor rule with $\phi>1$ that ensures determinacy!
+                    \item What is this other thing that would ensure determinacy?
+                    \item For example, the ECB has a monetary pillar, understood as a commitment to switch to a monetary approach to pin down inflation if inflation starts exploding.
+                    \item We will soon turn to these monetary approaches.
+                \end{itemize}
+            \end{frame}
+
+
+        \begin{frame}{Determinacy}
+        \begin{itemize}
+                \item We used $r$ as the intercept. Suppose $r_t$ is not constant and the central bank follow a more standard Taylor rule: 
+                \begin{align*}
+                    i_t = \bar{r}_t + \pi^* + \phi \bp{\pi_t-\pi^*},
+                \end{align*}
+                where $\bar{r}_t$ is the intercept, $\pi^*$ is the target inflation rate and $\phi$ is the response to inflation.
+                \item If we use this rule in the Fisher equation, we obtain \begin{align*}
+                   \pi_{t}-\pi^{*} & =\frac{1}{\phi}\left[r_{t}-\bar{r}_t+\left(E_{t}\left[\pi_{t+1}\right]-\pi^{*}\right)\right]
+                \end{align*}
+                \item What is needed to ensure that $\pi_t = \pi^*$ for all $t$?
+            \end{itemize}
+        \end{frame}
+
+
+
+        \begin{frame}{Determinacy}
+            \begin{itemize}
+                    \item The problem is now harder, because $r_t$ possibly fluctuates.
+                    \item In a richer model $r_t$ would depend on the monetary policy itself: monetary policy would affect the real economy. 
+                    \item To know how, you would need to know how inflation is linked to output (e.g., through the Phillips curve).
+                    \item Holden (2024) shows that if you replace $\bar{r}_t$ with $r_t$ in the monetary policy rule, you will restore determinacy -- \alb{Robust Real Rate Rules} (subject to the qualification that $E_t \pi_{t+T}$ does not diverge).
+                    \item If there is a unit response to real interest rates, i.e., $\bar{r} = r_t$, then you do not need to know other details of the economy to set inflation at the target. You \al{only} need a Fisher equation in the economy and you need to observe $r_t$ somehow. 
+                    \item This is an \al{extremely} powerful result. 
+                \end{itemize}
+            \end{frame}
+
+
+        \begin{frame}{Determinacy}
+            \begin{itemize}
+                    \item Assume there is some money demand in this economy: \begin{align*}
+                    m_t = p_t +  y - \eta i_t,\end{align*} where $\eta>0$ is a semielasticity of money demand.
+                    \item Use the Fisher equation to obtain 
+                    \begin{align*}
+                        m_t = p_t +  y - \eta \bs{r + \E_t \pi_{t+1}}.
+                    \end{align*}
+                    \item Let the central bank follow some money growth rule, e.g. $m_t =  m_{t-1} + \bar{m} $.
+                    \item Is it enough to ensure price level determinacy?
+                \end{itemize}
+            \end{frame}
+
+            
+        \begin{frame}{Determinacy}
+            \begin{itemize}
+                    \item We have a formula \begin{align*}
+                        \bp{1+\eta} \bp{ p_t  - \bar{m} \cdot t  } =\eta \bp{\E_t p_{t+1} - \bar{m} \cdot t} - y + p_t + \eta r.
+                    \end{align*}
+                    we can solve it forward and there will be a term like $\lim_{T\rightarrow\infty} \E_t p_{t+T} - \bar{m} \cdot \bp{t+T-1} $.
+                    \item This term will be equal to 0 by the household's optimality condition (transversality condition).
+                    \item \al{Intuition}: households do not want to hold too much or too little money. 
+                    \item We get \begin{align*}
+                        p_t  = \bar{m}\cdot t + \eta \bar{m} + \frac{1}{1+\eta} \sum_{j=0}^\infty \bp{\frac{\eta}{1+\eta}}^j \bp{\eta r - y}.
+                    \end{align*}
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Determinacy}
+                \begin{itemize}
+                        \item Money growth rule ensures price level determinacy (in this case).
+                        \item This is true even if there are shocks $u_t$ to money demand.
+                        \item With different microfoundations for money demand, conclusions might be different.
+                        \item We can solve for the implied nominal interest rate: \begin{align*}
+                            i_t = \frac{1}{\eta}\bp{p_t - m_t + y}
+                        \end{align*}
+                        \item Note it responds to \al{price level}. This is an equilibrium outcome. 
+                        \item If we instead \al{started} with a rule that responds to price levels it would be a \alb{Wicksellian rule}.
+                \end{itemize}
+                \end{frame}
+
+
+\begin{frame}{Budget constraint?}
+    \begin{itemize}
+            \item So far we have seen that fiscal policy can affect inflation / price levels by affecting supply / demand of money. 
+            \item Is there any other link? In particular, what if the economy is \al{cashless}?
+            \item One possibility is that fiscal policy has effects on output and then on inflation through the Phillips curve.
+            \item We will focus on a different link that could be present even in an endowment economy.
+            \item That link will depend on how we interpret the government budget "constraint".
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Budget constraint?}
+    \begin{itemize}
+            \item Example: simple static economy.
+            \item In the morning, bondholders wake up and own $B_0$ units of zero coupon bonds that promise to pay one unit of account ("dollar") each. 
+            \item The government pays bondholders by printing ``money".
+            \item In the evening, the government collects taxes $P_1 T_1$. Taxes are paid in "money". 
+            \item The world ends aferwards.
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Budget constraint?}
+    \begin{itemize}
+            \item In equilibrium \begin{align*}
+                B_0 = P_1 T_1.
+            \end{align*}
+            \item  ``Money" printed up in the morning must be all ``soaked" up by taxes at the end of the day.
+            \item $B_0$ is predetermined. We assume $T_1$ is exogenous. 
+            \item The price level $P_1$\al{adjusts} to ensure this equality.
+            \item This is an \alb{equilibrium condition}.
+            \item It looks a bit like a budget constraint, but it is \alr{not}.
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{Budget constraint?}
+    \begin{itemize}
+            \item In the example above we did not require the government to "collect enough taxes to pay its debt".
+            \item This is the \alr{Fiscal Theory of the Price Level}.
+            \item Consider other possible stories about how $P_1$ adjusts to ensure $B_0 = P_1 T_1$.
+            \item If $P_1$ is too low, more money was printed that will be collected in taxes. People will try to get rid of money by buying goods. This will push up the price level. 
+            \item ``Too much money chasing too few goods".
+            \item Too much government debt relative to fiscal surpluses is like net wealth -- people will try to spend more. 
+        \end{itemize}
+    \end{frame}
+  
+    
+\begin{frame}{FTPL intro}
+    \begin{itemize}
+            \item Contrast this with the \alb{quantity theory of money}.
+            \item In the quantity theory of money, inflation results from more money than needed to settle transations or to satisfy other money demand for other reasons. All money supply matters. 
+            \item Here only \alg{outside money} -- government liabilities -- matter. It is also irrelevant whether it is debt or currency. 
+            \item In the example it is not essential that the government "prints" money: people could pay taxes directly with bonds. 
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{FTPL intro}
+    \begin{itemize}
+            \item The government issues the currency and nominal debt that define the price level.
+            \item One possible interpretation nominal government debt is like corporate \emph{equity}: its price adjusts to make a valuation equation hold.
+            \item This does not hold for real or foreign currency government debt. 
+            \item This does not hold for personal or corporate debt.
+        \end{itemize}
+    \end{frame}
+\begin{frame}{FTPL intro}
+    \begin{itemize}
+            \item Note that the government could \al{choose} to set taxes $T_1$ such that $T_1 = \frac{B_0}{P_1}$ for all possible $P_1$, this means $T_1 = f\of{P_1}$.
+            \item In this case the price level is \alb{indeterminate}.
+            \item We call such a fiscal policy \al{passive} or \al{Ricardian}.
+            \item The point is that the government does not have to follow such a policy. Fiscal policy might be \al{active} or \al{non-Ricardian}. 
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{An intertemporal model}
+        \begin{itemize}
+                \item We now consider the most basic fully-specified version of the FTPL.
+                \item A representative households maximizes \begin{align*}
+                    \sum_{t=0}^\infty \beta^t u\of{c_t}
+                \end{align*}
+                in a complete asset market economy, with restriction $B_t \geq 0$ and $M_t \geq 0$.
+                \item The household has a constant endowment every period, $y$
+                \item The budget constraint of the household is \begin{align*}
+                    M_{t-1} + B_{t-1} + P_t y = P_t c_t + P_t s_t +  M_t + Q_t B_t \end{align*}
+                    where $Q_t \coloneq \frac{1}{1+i_t}$ is the price of bonds in terms of money and $s_t$ is real taxes net of transfers. 
+            \end{itemize}
+        \end{frame}
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item Notice that if $Q_t < 1$, then the household does not hold any money, $M_t = 0$.
+            \item If $Q_t = 1$, then money and bonds are perfect substitutes and we can use $B_t$ to denote their sum.
+            \item $Q_t > 1$ not possible. 
+            \item Drop $M_t$ from the budget constraint and use market clearing $c_t = y$ to obtain \begin{align*}
+                B_{t-1}  = P_t s_t +  Q_t B_t \end{align*}
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item Household optimality together with the market clearing implies \begin{align*}
+                Q_t = \beta \E_t \frac{P_t}{P_{t+1}}.
+            \end{align*}
+
+            \item There is also the transversality condition 
+            \begin{align*}
+                \lim_{T\to\infty} \beta^T \E_t \frac{B_{T-1}}{P_T}  = 0.
+            \end{align*}
+            \item We obtain \begin{align*}
+                \frac{B_{t-1}}{P_t}  = \E_t \sum_{j=0}^\infty \beta^j s_{t+j}.
+                \end{align*}
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item The government debt valuation equation \begin{align*}
+                \frac{B_{t-1}}{P_t}  = \E_t \sum_{j=0}^\infty \beta^j s_{t+j}.
+                \end{align*}
+                determines the price level $P_t$.
+            \item It does so in every period. 
+            \item This looks like a standard asset pricing formula! 
+            \item The government debt looks like a stock. Price per share $1/P_t$ times number of shares $B_{t-1}$ equals the present value of dividends $\bc{s_{t+j}}$.
+            \item There are problems with this analogy, it is potentially misleading -- see Hagedorn (2024). 
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item What if the government changes nominal debt without changing surpluses?
+            \item What if the government changes surpluses without changing nominal debt?
+            \item It is useful to rewrite the equation as \begin{align*}
+                \frac{B_{t}}{P_{t+1}}  = \E_{t+1} \sum_{j=0}^\infty \beta^j s_{t+j+1}.
+                \end{align*}
+            \item Define $\Delta\E_{t+1} \coloneq \E_{t+1} - \E_{t}$ to write \begin{align*}
+                \frac{B_{t}}{P_{t}} \Delta\E_{t+1}\frac{P_{t+1}}{P_t}  = \Delta\E_{t+1} \sum_{j=0}^\infty \beta^j s_{t+j+1}.
+                \end{align*}
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item At time $t+1$ both $B_t$ and $P_t$ are predetermined. 
+            \item \al{Unexpected} inflation is determined by changing expectations of the present value of surpluses.
+            \item Bad fiscal news affect inflation for one period only. 
+            \item This is because we assumed one-period debt only.
+        \end{itemize}
+    \end{frame}
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item We can also rewrite the equation as \begin{align*}
+                \frac{B_{t}}{P_{t}} \E_{t}\frac{P_{t+1}}{P_t}  = \E_{t} \sum_{j=0}^\infty \beta^j s_{t+j+1}.
+                \end{align*}
+            \item It is the same as \begin{align*}
+                \frac{B_{t}}{P_{t}} \frac{1}{1+i_t}  = \E_{t} \sum_{j=0}^\infty \beta^j s_{t+j+1}.
+                \end{align*}
+            \item The left hand side is the real revenue the government gets from selling debt $B_t$ at the end of period $t$.
+            \item The price level $P_t$ is already determined at the beginning of period $t$.
+            \item The revenue from bonds sales is fully determined by the PDV of surpluses. 
+        \end{itemize}
+    \end{frame}    
+
+\begin{frame}{An intertemporal model}
+    \begin{itemize}
+            \item The government can target nominal interest rates by changing $B_t$ without affecting surpluses. 
+            \item By standard arguments the expected inflation rate depends on the nominal interest rate. 
+            \item Monetary policy: changing $i_t$ / changing $B_t$ without adjusting surpluses. 
+            \item Fiscal policy: changing surpluses without adjusting $i_t$ / $B_t$.
+        \end{itemize}
+    \end{frame}    
+
+\end{document}

@@ -1,0 +1,5 @@
+PWD g:/TempDrop/Dropbox (Personal)/WNE/FMI/FMP2023/slides/6
+INPUT c:/texlive/2023/texmf.cnf
+INPUT c:/texlive/2023/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT g:/TempDrop/Dropbox (Personal)/WNE/FMI/FMP2023/slides/6/slides6.tex

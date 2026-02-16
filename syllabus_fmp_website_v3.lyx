@@ -1,0 +1,737 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "palatino" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+Fiscal and Monetary Policy 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\series default
+\size normal
+Spring 2026
+\series bold
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\series default
+\size normal
+University of Warsaw
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Instructor:
+\series default
+ Piotr Żoch
+\begin_inset space \hfill{}
+\end_inset
+
+
+\series bold
+Email: 
+\series default
+p.zoch@uw.edu.pl
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\series bold
+Office Hours:
+\series default
+ by appointment
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Course Description
+\series default
+: this advanced graduate level course on interactions between fiscal policy
+ and monetary policy will focus partly on substance and partly on tools.
+ It builds on foundations introduced in Advanced Macroeconomics: I assume
+ students are familiar with the Neoclassical Growth Model and the New Keynesian
+ Model.
+ Topics will include: macroeconomic effects of government purchases, fiscal
+ capacity and debt sustainability, public debt management in response to
+ aggregate shocks, theories of price level determination in monetary economies,
+ and fiscal and monetary interactions.
+ 
+\end_layout
+
+\begin_layout Standard
+Aside from attending class, doing the course readings, and participating
+ in discussions, you will have two additional requirements: 
+\end_layout
+
+\begin_layout Itemize
+Problem Sets: There will be two or three homework assignments in the course
+ working with models discussed in class.
+ You are encouraged to work on problem sets and to discuss them with your
+ classmates.
+ However, you have to submit your work in groups of up to two people unless
+ stated otherwise on a particular problem set.
+ 
+\end_layout
+
+\begin_layout Itemize
+Final Exam: There will be a final exam in the examination session.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Outline
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Macroeconomic effects of government purchases
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aiyagari, Christiano, and Eichenbaum (1992) “The Output, Employment, and
+ Interest Rate Effects of Government Consumption
+\begin_inset Quotes erd
+\end_inset
+
+, JME
+\end_layout
+
+\begin_layout Itemize
+Baxter and King (1993) “Fiscal Policy in General Equilibrium
+\begin_inset Quotes erd
+\end_inset
+
+, AER
+\end_layout
+
+\begin_layout Itemize
+Blanchard and Perotti (2002) 
+\begin_inset Quotes eld
+\end_inset
+
+An Empirical Characterization of the Dynamic Effects of Changes in Government
+ Spending and Taxes on Output
+\begin_inset Quotes erd
+\end_inset
+
+, QJE
+\end_layout
+
+\begin_layout Itemize
+Christiano and Eichenbaum (2011) 
+\begin_inset Quotes eld
+\end_inset
+
+When Is the Government Spending Multiplier Large?
+\begin_inset Quotes erd
+\end_inset
+
+, JPE
+\end_layout
+
+\begin_layout Itemize
+Ramey and Shapiro (1998) 
+\begin_inset Quotes eld
+\end_inset
+
+Costly Capital Reallocation and the Effects of Government Spending
+\begin_inset Quotes erd
+\end_inset
+
+, Carnegie-Rochester Conf.
+ Ser.
+ Public Policy
+\end_layout
+
+\begin_layout Itemize
+Ramey (2011) 
+\begin_inset Quotes eld
+\end_inset
+
+Can Government Purchases Stimulate the Economy?
+\begin_inset Quotes erd
+\end_inset
+
+, JEL 
+\end_layout
+
+\begin_layout Itemize
+Ramey (2016) 
+\begin_inset Quotes eld
+\end_inset
+
+Macroeconomic Shocks and Their Propagation
+\begin_inset Quotes erd
+\end_inset
+
+, Handbook of Macroeconomics vol.
+ 2
+\end_layout
+
+\begin_layout Itemize
+Ramey and Zubairy (2018) 
+\begin_inset Quotes eld
+\end_inset
+
+Government Spending Multipliers in Good Times and in Bad: Evidence from
+ U.S.
+ Historical Data
+\begin_inset Quotes erd
+\end_inset
+
+, JPE
+\end_layout
+
+\begin_layout Itemize
+Ramey (2019) 
+\begin_inset Quotes eld
+\end_inset
+
+Ten Years After the Financial Crisis: What Have We Learned from the Renaissance
+ in Fiscal Research?
+\begin_inset Quotes erd
+\end_inset
+
+, JEP
+\end_layout
+
+\begin_layout Itemize
+Woodford (2011) 
+\begin_inset Quotes eld
+\end_inset
+
+Simple Analytics of the Government Expenditure Multiplier
+\begin_inset Quotes erd
+\end_inset
+
+, AEJ: Macro
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Fiscal capacity and debt sustainability
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bohn (1998) 
+\begin_inset Quotes eld
+\end_inset
+
+The Behavior of U.S.
+ Public Debt and Deficits
+\begin_inset Quotes erd
+\end_inset
+
+, QJE
+\end_layout
+
+\begin_layout Itemize
+Blanchard (2019) 
+\begin_inset Quotes eld
+\end_inset
+
+Public Debt and Low Interest Rates
+\begin_inset Quotes erd
+\end_inset
+
+, AER
+\end_layout
+
+\begin_layout Itemize
+Kehoe, Nicolini, and Sargent (2020) 
+\begin_inset Quotes eld
+\end_inset
+
+A Framework for Studying the Monetary and Fiscal History of Latin America,
+ 1960–2017
+\begin_inset Quotes erd
+\end_inset
+
+ Minneapolis Fed Working Paper Series
+\end_layout
+
+\begin_layout Itemize
+Krishnamurthy and Vissing-Jorgensen (2012) 
+\begin_inset Quotes eld
+\end_inset
+
+The Aggregate Demand for Treasury Debt
+\begin_inset Quotes erd
+\end_inset
+
+, JPE
+\end_layout
+
+\begin_layout Itemize
+Lustig, Jiang, Van Nieuwerburgh, and Xiaolan (2022) 
+\begin_inset Quotes eld
+\end_inset
+
+Fiscal Capacity: An Asset Pricing Perspective
+\begin_inset Quotes erd
+\end_inset
+
+, RFS
+\end_layout
+
+\begin_layout Itemize
+Lustig, Jiang, Van Nieuwerburgh, and Xiaolan (2022) 
+\begin_inset Quotes eld
+\end_inset
+
+Measuring U.S.
+ Fiscal Capacity using Discounted Cash Flow Analysis
+\begin_inset Quotes erd
+\end_inset
+
+, Brookings Papers on Economic Activity
+\end_layout
+
+\begin_layout Itemize
+Mehrotra, and Sergeyev (2021) 
+\begin_inset Quotes eld
+\end_inset
+
+Debt Sustainability in a Low Interest Rate World," JME
+\end_layout
+
+\begin_layout Itemize
+Mian, Straub, and Sufi (2022) 
+\begin_inset Quotes eld
+\end_inset
+
+A Goldilocks Theory of Fiscal Deficits
+\begin_inset Quotes erd
+\end_inset
+
+, NBER Working Papers
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Aggregate shocks and debt management
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Angeletos (2002) "Fiscal Policy with Non-Contingent Debt and the Optimal
+ Maturity Structure", QJE
+\end_layout
+
+\begin_layout Itemize
+Angeletos, Collard, and Dellas (2023) "Public Debt as Private Liquidity",
+ JPE
+\end_layout
+
+\begin_layout Itemize
+Barro (1979) “On the Determination of Public Debt", JPE
+\end_layout
+
+\begin_layout Itemize
+Bhandari, Evans, Golosov, and Sargent (2017) “Fiscal Policy and Debt Management
+ with Incomplete Markets”, QJE
+\end_layout
+
+\begin_layout Itemize
+Bhandari, Evans, Golosov, and Sargent (2021) “Inequality, Business Cycles,
+ and Monetary-Fiscal Policy”, ECMA
+\end_layout
+
+\begin_layout Itemize
+Lucas and Stokey (1983) “Optimal Fiscal and Monetary Policy in an Economy
+ without Capital
+\begin_inset Quotes erd
+\end_inset
+
+, JME
+\end_layout
+
+\begin_layout Itemize
+Chari, Christiano, and Kehoe (1994) “Optimal Fiscal Policy in a Business
+ Cycle Model”, JPE
+\end_layout
+
+\begin_layout Itemize
+Hall and Sargent (2021) 
+\begin_inset Quotes eld
+\end_inset
+
+Debt and Taxes in Eight U.S.
+ Wars and Two Insurrections
+\begin_inset Quotes erd
+\end_inset
+
+, Handbook of Historical Economics
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Price level determination in monetary economies
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bewley (1980) “The Optimum Quantity of Money”, Models of Monetary Economies
+\end_layout
+
+\begin_layout Itemize
+Cochrane (2005) 
+\begin_inset Quotes eld
+\end_inset
+
+Money as Stock
+\begin_inset Quotes erd
+\end_inset
+
+, JME
+\end_layout
+
+\begin_layout Itemize
+Cochrane (2011) 
+\begin_inset Quotes eld
+\end_inset
+
+Determinacy and Identification with Taylor Rules", JPE
+\end_layout
+
+\begin_layout Itemize
+Hagedorn (2021) 
+\begin_inset Quotes eld
+\end_inset
+
+A Demand Theory of the Price Level
+\begin_inset Quotes erd
+\end_inset
+
+, mimeo
+\end_layout
+
+\begin_layout Itemize
+Hagedorn (2024) 
+\begin_inset Quotes eld
+\end_inset
+
+The Failed Theory of the Price Level
+\begin_inset Quotes erd
+\end_inset
+
+, mimeo
+\end_layout
+
+\begin_layout Itemize
+Holden (2024) 
+\begin_inset Quotes eld
+\end_inset
+
+Robust Real Rate Rules
+\begin_inset Quotes erd
+\end_inset
+
+, ECMA
+\end_layout
+
+\begin_layout Itemize
+Leeper (1991) 
+\begin_inset Quotes eld
+\end_inset
+
+Equilibria Under "Active" and "Passive" Monetary and Fiscal Policies
+\begin_inset Quotes erd
+\end_inset
+
+, JME
+\end_layout
+
+\begin_layout Itemize
+Sargent and Wallace (1975) 
+\begin_inset Quotes eld
+\end_inset
+
+"Rational" Expectations, the Optimal Monetary Instrument, and the Optimal
+ Money Supply Rule
+\begin_inset Quotes erd
+\end_inset
+
+, JPE
+\end_layout
+
+\begin_layout Itemize
+Woodford (1994) 
+\begin_inset Quotes eld
+\end_inset
+
+Monetary Policy and Price Level Determinacy in a Cash-in-Advance Economy",
+ ET
+\end_layout
+
+\begin_layout Itemize
+Woodford (1995) 
+\begin_inset Quotes eld
+\end_inset
+
+Price-level determinacy without control of a monetary aggregate
+\begin_inset Quotes erd
+\end_inset
+
+, Carnegie-Rochester Conf.
+ Ser.
+ Public Policy
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+Fiscal and monetary policy interactions
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Angeletos, Lian, and Wolf (2023) 
+\begin_inset Quotes eld
+\end_inset
+
+Can Deficits Finance Themselves?
+\begin_inset Quotes erd
+\end_inset
+
+, NBER Working Papers
+\end_layout
+
+\begin_layout Itemize
+Bayer, Born, and Luetticke (2022) 
+\begin_inset Quotes eld
+\end_inset
+
+The Liquidity Channel of Fiscal Policy
+\begin_inset Quotes erd
+\end_inset
+
+, JME
+\end_layout
+
+\begin_layout Itemize
+Bianchi and Melosi (2019) 
+\begin_inset Quotes eld
+\end_inset
+
+The Dire Effects of the Lack of Monetary and Fiscal Coordination
+\begin_inset Quotes erd
+\end_inset
+
+, JME
+\end_layout
+
+\begin_layout Itemize
+Bianchi, Faccini, and Melosi (2023) 
+\begin_inset Quotes eld
+\end_inset
+
+A Fiscal Theory of Persistent Inflation
+\begin_inset Quotes erd
+\end_inset
+
+, QJE
+\end_layout
+
+\begin_layout Itemize
+Cochrane (2001) 
+\begin_inset Quotes eld
+\end_inset
+
+Long Term Debt and Optimal Policy in the Fiscal Theory of the Price Level
+\begin_inset Quotes erd
+\end_inset
+
+, ECMA
+\end_layout
+
+\begin_layout Itemize
+Cochrane (2018) 
+\begin_inset Quotes eld
+\end_inset
+
+Stepping on a Rake: the Fiscal Theory of Monetary Policy
+\begin_inset Quotes erd
+\end_inset
+
+, EER
+\end_layout
+
+\begin_layout Itemize
+Cochrane (2021) 
+\begin_inset Quotes eld
+\end_inset
+
+The Fiscal Roots of Inflation
+\begin_inset Quotes erd
+\end_inset
+
+, RED
+\end_layout
+
+\begin_layout Itemize
+Del Negro and Sims (2015) "When Does a Central Bank’s Balance Sheet Require
+ Fiscal Support?", JME
+\end_layout
+
+\begin_layout Itemize
+Leeper and Leith (2016) 
+\begin_inset Quotes eld
+\end_inset
+
+Understanding Inflation as a Joint Monetary–Fiscal Phenomenon
+\begin_inset Quotes erd
+\end_inset
+
+, Handbook of Macroeconomics vol.
+ 2
+\end_layout
+
+\begin_layout Itemize
+Sargent and Wallace (1981) 
+\begin_inset Quotes eld
+\end_inset
+
+Some Unpleasant Monetarist Arithmetic
+\begin_inset Quotes erd
+\end_inset
+
+ Federal Reserve Bank of Minneapolis Quarterly Review
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
