@@ -1,11 +1,13 @@
 # Track only selected PDFs
 *
 !.gitignore
+!README.md
 !GovPurchases/
 !GovPurchases/Papers/
 !GovPurchases/Papers/*.pdf
 !GovPurchases/Slides/
 !GovPurchases/Slides/ngm_theory.pdf
+!GovPurchases/Slides/empirics.pdf
 !Intro/
 !Intro/Slides/
 !Intro/Slides/slides_intro.pdf
