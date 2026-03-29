@@ -7,7 +7,7 @@ Office hours: by appointment
 
 
 ## Log and announcements 
-+ 29/3: Problem Set 1 posted in `problem_sets/pset1.pdf`. Solutions due April 15th, 11:59 PM.
++ 29/3: Problem Set 1 posted [here](problem_sets/pset1.pdf). Solutions due April 15th, 11:59 PM.
 + 23/3: Debt sustainability: the asset pricing approach. SDF, GDP risk premium, fiscal capacity, convenience yields, and the government bond valuation puzzle (Jiang, Lustig, Van Nieuwerburgh & Xiaolan 2022, 2023).
 + 16/3: Debt sustainability: the intertemporal government budget constraint, no-Ponzi conditions, Bohn's fiscal reaction function, r vs g debate.
 + 9/3: Empirics of fiscal multipliers. Local projections, cross-sectional evidence, state-dependent multipliers.
