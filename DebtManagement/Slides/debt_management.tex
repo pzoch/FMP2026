@@ -1,0 +1,936 @@
+\documentclass[11pt,xcolor={dvipsnames},aspectratio=159,hyperref={pdftex,pdfpagemode=UseNone,hidelinks,pdfdisplaydoctitle=true},usepdftitle=false]{beamer}
+\usepackage{presentation}[aspectratio=169]
+\usepackage{math}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{mleftright}
+
+% Enter title of presentation PDF:
+\hypersetup{pdftitle={Aggregate Shocks and Debt Management I}}
+% Enter link to PDF file with figures:
+
+
+\begin{document}
+% Enter presentation title:
+\title{Aggregate Shocks and Debt Management I}
+\subtitle{Fiscal and Monetary Policy 2026}
+% Enter presentation information:
+
+% Enter presentation authors:
+\author{Piotr Żoch}%
+% Enter presentation location and date (optional; comment line if not needed):
+\frame{\titlepage}
+
+% Fill out content of presentation:
+\begin{frame}{Plan}
+    \begin{itemize}
+    \item How \al{should} the government change taxes and debt in response
+    to changes in purchases?
+    \item For example: \al{should} it finance war spending in the same way
+    as public education?
+    \item This is a \al{normative} question, but to the extent real world
+    governments behave according to prescriptions of models we will see
+    in class, it will also be a \al{positive theory} of government debt
+    and taxes.
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Plan}
+
+    \begin{itemize}
+    \item We will study optimal taxation and debt policy in two environments:
+    \begin{itemize}
+    \item \alb{incomplete markets}: the government can buy or sell only a limited
+    set of securities, often only a single risk-free security.
+    \item \alr{complete markets}: the government can buy or sell claims contingent
+    on all possible states of the world.
+    \end{itemize}
+    \item First study a reduced form model (Barro, 1979), then proceed to optimal
+    taxation in a competitive equilibrium (Lucas and Stokey, 1983).
+    \end{itemize}
+\end{frame}
+    %
+    \begin{frame}
+        \heading{Reduced form models}
+    \end{frame}
+
+    \begin{frame}{Incomplete Markets}
+    \begin{itemize}
+    \item We study the following problem based on Barro (1979):
+    \begin{itemize}
+    \item the government uses taxes $\tau_{t}$ to finance \emph{stochastic}
+    purchases $g_{t}$;
+    \item  $D\left(\tau_{t}\right)$  is the deadweight loss of taxes;
+    \item the government wants to finance $g_{t}$ in a way that minimizes the
+    expected value of present discounted deadweight loss of taxes: 
+    \[
+    \min[\bc{\tau_t}_{t=0}^\infty] \E[0] \sum_{t=0}^\infty \bs{\bp{\frac{1}{1+r}}^t D\bp{\tau_t}}
+    \]
+    where $1/\left(1+r\right)$ is the government's discount factor.
+    \end{itemize}
+    \end{itemize}
+    \end{frame}
+    %
+    \begin{frame}{Incomplete Markets}
+    \begin{itemize}
+    \item Assume that $g_{t}$ is governed by an $N$ state Markov chain.
+    \item The state of the world is given by $s_{t}$ that follows a Markov
+    chain with a transition probability matrix $P$: 
+    \begin{align*}
+    P_{ij} & =P\bc{s_{t+1}=\bar{s}_{j}\mid s_{t}=\bar{s}_{i}}. 
+    \end{align*}
+    \item Government spending $\bc{g_t}$ obeys 
+    \begin{align*}
+    g_{t} & =\begin{cases}
+    g_{1} & \text{if}\;s_{t}=\bar{s}_{1}\\
+    \vdots\\
+    g_{N} & \text{if}\;s_{t}=\bar{s}_{N}.
+    \end{cases}
+    \end{align*}
+    \end{itemize}
+    \end{frame}
+    %
+    
+    
+    \begin{frame}{Incomplete Markets}
+    \begin{itemize}
+    \item The government can issue only \alg{one period, non-state contingent} debt (\alb{incomplete markets}) at the price $1/\left(1+r\right)$,
+    equal to the discount rate. 
+    \item Government problem:
+    \begin{align*}
+     &  \min[\bc{\tau_t}_{t=0}^\infty] \E[0] \sum_{t=0}^\infty \bs{\bp{\frac{1}{1+r}}^t D\bp{\tau_t}}\\
+    \text{s.t.}\quad & g_{t}+b_{t}=\frac{1}{1+r}b_{t+1}+\tau_{t}
+    \end{align*}
+    and, in addition, we assume 
+    \[
+        \E[0] \bs{\bp{\frac{1}{1+r}}^t b^2_t} \le \infty .
+    \]
+    \end{itemize}
+    \end{frame}
+    %
+    \begin{frame}{Recursive formulation of the government's problem}
+    \begin{itemize}
+    \item Write the problem recursively:
+    \begin{align*}
+    V\bp{b,g} & =\min[\tau] D\bp{\tau}+\frac{1}{1+r}\E\bs{V\bp{b',g'} \mid g }\\
+    \text{s.t.}\quad & g+b=\frac{1}{1+r}b'+\tau
+    \end{align*}
+    where $x$ denotes current variables and $x'$ next-period variables.
+    \end{itemize}
+    \end{frame}
+    %
+    \begin{frame}{The FOC equates marginal distortion to the shadow value of debt}
+    \begin{itemize}
+    \item Substitute the constraint and differentiate with respect to $\tau$:
+    \[
+    D'\bp{\tau}=\E\bs{\pd{V\bp{b',g'}}{b'} \mathrel{\Big|} g}   \]
+    \item The \alg{envelope condition} gives us $V'\bp{b,g}  =D'\bp{\tau}$, so
+    \begin{align*}
+    V'\bp{b',g'} & =D'\bp{\tau'}.
+    \end{align*}
+    \end{itemize}
+    \end{frame}
+    %
+    \begin{frame}{The Euler equation: marginal distortion today $=$ expected marginal distortion tomorrow}
+    \begin{itemize}
+    \item Combining the FOC with the envelope condition:
+    \begin{align*}
+        D'\bp{\tau_t}  =\E[t]\bs{D'\bp{\tau_{t+1}}}
+    \end{align*}
+    \item \al{Tax smoothing:} spread out distortionary effects of taxes across time.
+    \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}{Incomplete Markets}
+        \begin{itemize}
+        \item  There are two special cases we will consider in more detail:
+        \begin{itemize}
+            \item Special case 1 - no uncertainty (perfect foresight):    
+                 $$\tau_{t}=\tau_{t+1}$$
+            \item Special case 2 - quadratic deadweight loss ($D\bp{\tau_{t}}=a\tau_{t}^{2}+\gamma):$
+                $$\tau_{t}=\E[t]\bs{\tau_{t+1}}$$
+        \end{itemize}
+        \end{itemize}
+        
+        \end{frame}
+
+    \begin{frame}{Special case 1: perfect foresight}
+        \begin{itemize} 
+            \item With no uncertainty about future $g_t$ (\alg{perfect foresight}), taxes are constant.
+            \item $\tau$ (a single value) is chosen to satisfy the budget constraint: \[ \tau = \frac{r}{1+r} \bs{\sum_{t=0}^{\infty}\bp{\frac{1}{1+r}}^t g_t + b_0} \]
+            \item Debt absorbs all fluctuations in government spending:
+            \[ b_{t+1} - b_{t} = r \bp{b_t - b_0} +  \bp{1+r}g_t - r \sum_{s=0}^{\infty}\bp{\frac{1}{1+r}}^s g_s. \]
+        \end{itemize}
+            
+    
+    \end{frame}
+    
+    \begin{frame}{Special case 1: perfect foresight}
+        \begin{itemize} 
+            \item If $g_t=g$ is constant, then \vspace{-2pt}
+            \[ \tau = g + \frac{r}{1+r}b_0, \quad b_t = b_0; \] debt remains constant at its initial level. 
+            \item If $g_0 = g + \epsilon$ and $g_t = g$ for all $t\geq1$ then  \vspace{-2pt}\[\tau=g+\frac{r}{1+r}\bp{\epsilon+b_0}, \quad b_t = b_0 + \epsilon \;\text{for}\; t \geq 1;\] debt increases by $\epsilon$ and stays elevated forever.
+        \item There is \al{no debt target}: $b_0$ shifts the constant tax level, but absent new spending surprises debt simply stays where it is.
+        \item What matters for \al{changes} in debt is \al{transitory} fluctuations in $g_t$, not the average level of $g_t$.
+        \item Intuition valid also with trend growth of GDP and government spending (see Barro's paper). 
+            \end{itemize}
+            
+    
+    \end{frame}
+
+
+    \begin{frame}{Special case 2 - quadratic deadweight loss}
+    
+    \begin{itemize}
+    \item What does the condition \[\tau_{t}=\E[t]\bs{\tau_{t+1}}\] tell
+    us about the optimal tax policy? 
+    \item $\tau_{t}$ is a \alg{random walk}: 
+     \begin{align*}
+    \tau_{t+1}-\tau_{t} & =\tau_{t+1}-\E[t]\bs{\tau_{t+1}}\\
+     & =\tau_{t+1}-\bp{\tau_{t+1}-\epsilon_{t+1}}\\
+     & =\epsilon_{t+1}
+    \end{align*}
+    where $\epsilon_{t+1}$ is a martingale-difference innovation.
+    \end{itemize}
+    \end{frame}
+    %
+
+    
+    \begin{frame}{Special case 2 - quadratic deadweight loss}
+    
+    \begin{itemize}
+    \item Since $\E[t-1]\bs{\tau_t} = \tau_{t-1}$, the \al{innovation} $\tau_t - \E[t-1]\bs{\tau_t}$ moves only because of news about expected future $g_t$.
+    \item In a persistent but non-absorbing high-spending state, observing the state survive one more period is itself new information.
+    \item To see this, use the budget constraint together with $\E[t]\bs{\tau_{t+1}} = \tau_t$ to get 
+    \[ \tau_{t}=\frac{r}{1+r}b_{t}+\frac{r}{1+r}\sum_{s=0}^{\infty}\bp{\frac{1}{1+r}}^{s}\E[t]\bs{g_{t+s}}. \]
+    so \[ \tau_t - \E[t-1]\bs{\tau_t} =\frac{r}{1+r}\sum_{s=0}^{\infty}\bp{\frac{1}{1+r}}^{s}\bp{\E[t]\bs{g_{t+s}}-\E[t-1]\bs{g_{t+s}}} \]
+    \end{itemize}
+    \end{frame}
+    %
+    \begin{frame}{Special case 2 - quadratic deadweight loss}
+    
+    \begin{itemize}
+    \item The size of the jump in $\tau_t$ depends on the size of the change in expected future $g_t$:
+    \begin{itemize} 
+        \item If there is a permanent shift in $g_t$, $\E[t]\bs{g_{t+s}}-\E[t-1]\bs{g_{t+s}}=\epsilon$ for all $s$, taxes change by exactly the same amount $\epsilon$.
+        \item If the change is temporary, $\E[t]\bs{g_{t+s}}-\E[t-1]\bs{g_{t+s}}=\epsilon$ only for $s=0$, taxes change by $\epsilon r \slash \bp{1+r}$.
+    \end{itemize}
+    \item Remaining needed resources raised through debt issuance:
+    \begin{itemize}
+        \item Debt remains constant for a permanent change in $g_t$.
+        \item Debt changes by $\epsilon$ for a temporary change in $g_t$.
+    \end{itemize}
+
+    \item \alg{Implication:} finance education by taxes, finance war by debt.
+    \end{itemize}
+    \end{frame}
+    %
+    \begin{frame}{Special case 2 - quadratic deadweight loss}
+
+        \begin{itemize}
+        \item Debt is the residual financing object:
+        \[
+            b_{t+1} = \bp{1+r}\bp{g_t + b_t - \tau_t}.
+        \]
+        \item There is \al{nothing} that acts as a force that would push debt to a particular level:
+        \begin{itemize}
+            \item No debt target;
+            \item No "raise taxes if debt is too high" rule;
+            \item Debt need not revert to any stable level; it can drift for long periods as tax smoothing shifts shocks into future debt service.
+        \end{itemize}
+        \end{itemize}
+        \end{frame}
+        %
+
+        \begin{frame}{Numerical example: Barro incomplete markets}
+        \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{barro_example/barro_paths.png}
+        \caption{\scriptsize Quadratic tax loss: $D(\tau)=a\tau^2+\gamma$. Parameters: $\beta = 0.96$, $g_t \in \{1,2\}$, $P_{12} = 0.2$, $P_{21} = 0.4$, initial debt $b_0 = 0$.}
+        \end{figure}
+        \end{frame}
+        %
+    \begin{frame}{Temporary vs permanent spending shocks}
+    \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{barro_example/jump_comparison.png}
+    \caption{\scriptsize Temporary shock: $\Delta \tau = \epsilon r \slash \bp{1+r}$ and $\Delta b = \epsilon$. Permanent shock: $\Delta \tau = \epsilon$ and debt is unchanged.}
+    \end{figure}
+    \end{frame}
+    %
+    \begin{frame}{Three-state Markov simulation: tax innovations}
+    \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{barro_example/three_state_paths.png}
+    \caption{\scriptsize Dashed gray line: last period's forecast $\E[t-1]\bs{\tau_t} = \tau_{t-1}$. Purple bars: tax innovation $\tau_t - \E[t-1]\bs{\tau_t}$. Red circles mark persistent-shock periods; orange triangles mark temporary-shock periods. Both shock states have the same current size, $g_t = \bar g + \epsilon$, but state 2 is non-absorbing, so surviving one more period in that state is itself news.}
+    \end{figure}
+    \end{frame}
+    %
+    
+            \begin{frame}
+                \heading{Lucas and Stokey (1983)}
+            \end{frame}
+        
+            \begin{frame}{Setup}
+            \begin{itemize}
+            \item We study the following problem based on Lucas and Stokey (1983):
+            \begin{itemize}
+            \item the representative household has preferences over consumption and labor (leisure);
+            \item production technology is linear in labor, there is no capital;
+            \item the government uses \al{distortionary} tax rate $\tau_{t}$ on \al{labor income} to finance \emph{stochastic}
+            purchases $g_{t}$ (we assume $g_{t}$ is a Markov process);
+            \item the households and the government can trade a full set of \alg{Arrow securities} (state-contingent claims).
+            \item the government wants to finance $g_{t}$ in a way that maximizes the welfare of the representative household.
+            \end{itemize}
+            \item General equilibrium.
+            \end{itemize}
+            \end{frame}
+        
+        
+            %
+            \begin{frame}{Setup}
+            \begin{itemize}
+            \item Price of securities no longer exogenous.
+            \item The government cares about welfare of the representative household.
+            \item Think of the problem in two steps:
+            \begin{enumerate} 
+                \item for \al{given} government policies there exists some \alg{competitive equilibrium};
+                \item the government picks policies that result in the "best" equilibrium.
+            \end{enumerate}
+            \item Key difference: policies not only have to satisfy the government's budget constraint, but also household's optimality conditions.
+            \item \alb{Primal approach}: we will look directly for allocations that maximize welfare and then think of policies that implement that.
+            \end{itemize}
+            \end{frame}
+            %
+	            \begin{frame}{The primal approach in four steps}
+	            \begin{enumerate}
+	                \item Write down the household problem, the firm problem, and feasibility conditions;
+	                \item Derive the household first order conditions;
+	                \item Substitute out prices and policies $\Rightarrow$ \alb{implementability constraint}: a single restriction on allocations that summarizes private optimality;
+	                \item Formulate the \alg{Ramsey problem}: maximize welfare subject to implementability $+$ resource constraints.
+	            \end{enumerate}
+	            \end{frame}
+	            %
+	            \begin{frame}{Notation: current state vs.\ history}
+	                \begin{itemize}
+	                \item $s_t$ denotes the \alg{current exogenous state} at date $t$.
+	                \item $s^t \equiv \bp{s_0,\dots,s_t}$ denotes the \alg{entire history} up to date $t$.
+	                \item An object indexed by $s^t$ may in principle depend on the whole history:
+	                \[
+	                c\bp{s^t},\; \ell\bp{s^t},\; \tau\bp{s^t},\; a\bp{s^{t+1}},\; q\bp{s^{t+1}\mid s^t}.
+	                \]
+	                \item The notation $s^{t+1}\ge s^t$ means that $s^{t+1}$ is a successor history that extends the current history by one state realization.
+	                \item Since $g_t$ is Markov, probabilities depend on the history only through the last state:
+	                \[
+	                \pi\bp{s^{t+1}\mid s^t} = \pi\bp{s_{t+1}\mid s_t}.
+	                \]
+	                \item Later we show that under the Ramsey allocation many objects become \al{history independent}, so they can be written as functions of $s_t$ alone.
+	                \end{itemize}
+	            \end{frame}
+	            %
+            \begin{frame}{Step 1: The household problem with Arrow securities}
+            \begin{itemize}
+            \item Household chooses consumption, labor supply and portfolio of Arrow securities to maximize expected utility:
+            \begin{align*}  
+                &\max \E_0 \sum_{t=0}^\infty  \beta^t u\bp{c \bp{s^t},\ell\bp{s^t}}\\
+                \text{s.t.} \quad \forall s^t \quad & c\bp{s^t}  + \sum_{s^{t+1} \geq  s^t} q\bp{s^{t+1}\mid s^t} a \bp{s^{t+1}} \\ &=\bp{1 - \tau\bp{s^t} }w \bp{s^t} \ell\bp{s^t} + a \bp{s^{t}}  \\
+                & a \bp{s^0}  = a_0 
+                \end{align*}
+                where $u\bp{\cdot}$ is the utility function, $c\bp{\cdot}$ consumption and $\ell \bp{\cdot}$ labor.
+                  \end{itemize}
+            \end{frame}
+        
+        
+            \begin{frame}{Step 1: Complete markets collapse to a single budget constraint}
+            \begin{itemize}
+            \item Impose the \alg{natural debt limit}: in each state $s^t$, the household cannot borrow more than the present value of its minimum future after-tax income:
+            \begin{align*}
+                a\bp{s^t} \geq -\bar{A}\bp{s^t}.
+            \end{align*}
+            \item This is the tightest borrowing limit that does not shrink the budget set relative to Arrow-Debreu.
+            \item Iterate the sequential budget constraint forward $T$ periods. The natural debt limit ensures that the terminal term $\sum_{s^{T+1}} q^0\bp{s^{T+1}}\, a\bp{s^{T+1}} \geq 0$, where $q^0\bp{s^t}$ is the time-0 Arrow-Debreu price.
+            \item Passing to the limit, the present-value budget constraint follows:
+            \begin{align*}
+            \sum_{t=0}^\infty \sum_{s^t}  q^0\bp{s^t} c\bp{s^t}  \leq
+            \sum_{t=0}^\infty \sum_{s^t}  q^0\bp{s^t} \bp{1 - \tau\bp{s^t} }w \bp{s^t} \ell\bp{s^t} +q^0\bp{s^0} a_0.
+            \end{align*}
+                \end{itemize}
+            \end{frame}
+        
+            \begin{frame}{Step 1: The household problem with a single constraint}
+            \begin{itemize}
+            \item With locally nonsatiated preferences, the present-value budget constraint binds at the optimum, so the household problem becomes:
+            \begin{align*}
+                & \max \sum_{t=0}^\infty \sum_{s^t}  \beta^t \pi\bp{s^t} u\bp{c \bp{s^t},\ell\bp{s^t}}\\
+                \text{s.t.} & \sum_{t=0}^\infty \sum_{s^t}  q^0\bp{s^t} c\bp{s^t}  =
+                \sum_{t=0}^\infty \sum_{s^t}  q^0\bp{s^t} \bp{1 - \tau\bp{s^t} }w \bp{s^t} \ell\bp{s^t} \\ &  + q^0\bp{s^0}a_0
+                \end{align*}
+                \item This is nice because there is only \al{one} constraint.
+                \item Under the natural debt limit, this present-value problem is equivalent to the original sequential Arrow-securities problem.
+                    \end{itemize}
+            \end{frame}
+        
+        
+            %
+            \begin{frame}{Step 2: Household first order conditions}
+            \begin{itemize}
+            \item Write down the Lagrangian and differentiate with respect to $c\bp{s^t}$ and $\ell\bp{s^t}$ to get the first order conditions:
+            \begin{align*}
+            \bs{c\bp{s^t}:} \;\beta^t \pi\bp{s^t} u_c \bp{c \bp{s^t},\ell\bp{s^t}} & =\lambda q^0\bp{s^t}\\
+            \bs{\ell\bp{s^t}:} \;\beta^t \pi\bp{s^t} u_{\ell} \bp{c \bp{s^t},\ell\bp{s^t}} & =-\lambda q^0\bp{s^t}\bp{1 - \tau\bp{s^t} }w \bp{s^t}
+            \end{align*}
+            \item Note: the Lagrange multiplier $\lambda$ is \alg{the same} for all states $s^t$.
+            \item To simplify notation
+            \begin{align*}
+                \bs{c\bp{s^t}:} \;\beta^t \pi\bp{s^t} u_c \bp{s^t} & =\lambda q^0\bp{s^t}\\
+                \bs{\ell\bp{s^t}:} \;\beta^t \pi\bp{s^t} u_{\ell} \bp{s^t} & =-\lambda q^0\bp{s^t}\bp{1 - \tau\bp{s^t} }w \bp{s^t}
+                \end{align*}
+            \item Under standard concavity and interiority assumptions, these FOCs characterize the household optimum.
+            \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Firm problem}
+                \begin{itemize}
+                    \item Output in this economy is produced by a representative price-taking firm.
+                    \item Linear production function that uses labor as the only input:
+                    \[
+                        y\bp{s^t} = A\ell\bp{s^t}.
+                    \]
+                    \item The firm chooses labor to maximize profits:
+                    \[
+                        \max_{\ell\bp{s^t}}\; A\ell\bp{s^t} - w\bp{s^t} \ell \bp{s^t}.
+                    \]
+                    \item In a competitive equilibrium,
+                    \[
+                        w\bp{s^t} = A.
+                    \]
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Government feasibility}
+                \begin{itemize}
+                    \item A competitive equilibrium must also satisfy the government's budget constraint in each state.
+                    \item For the primal approach, it is enough to work with the aggregate resource constraint:
+                    \[
+                        A \ell\bp{s^t} = g\bp{s^t} + c\bp{s^t}.
+                    \]
+                    \item With market clearing and the firm's zero-profit condition, Walras' law makes the government budget constraint redundant.
+                \end{itemize}
+            \end{frame}
+
+	            \begin{frame}{Competitive equilibrium}
+	                \begin{beamerboxesrounded}[upper=block head,lower=block body,shadow=false]{\textbf{Competitive equilibrium}}
+	                    A competitive equilibrium given government policies $\tau\bp{s^t}$ and $g\bp{s^t}$ is a set of allocations $\bp{c\bp{s^t},\ell\bp{s^t},a\bp{s^{t+1}}}$ and prices $\bp{q\bp{s^{t+1} \mid s^t },w\bp{s^t}}$ such that: 
+                    \begin{enumerate}
+                        \item Given prices, allocations solve the household problem;
+                        \item Given prices, allocations solve the firm problem;
+                        \item The government budget constraint is satisfied in each state;
+                        \item All markets clear in each state.
+                    \end{enumerate}
+                \end{beamerboxesrounded}
+        
+                \begin{itemize}
+                    \item This bundles together the objects we have just introduced and is enough for our purposes.
+                \end{itemize}
+                \end{frame}
+
+        \begin{frame}{Step 3: Substitute out prices and policies (necessity)}
+                \begin{itemize}
+                \item \al{Necessity:} if $\bp{c\bp{s^t}, \ell\bp{s^t}}$ is part of a competitive equilibrium, then it satisfies the implementability constraint.
+                \item Since $q^0\bp{s^0}=1$, the time-0 consumption FOC implies $\lambda = u_c\bp{s^0}$.
+                \item From the FOCs, replace $q^0\bp{s^t}$ in the budget constraint:
+                \begin{align*}
+                    \text{LHS:} \quad & \sum_{t,s^t} q^0\bp{s^t} c\bp{s^t} = \frac{1}{u_c\bp{s^0}}\sum_{t,s^t}  \beta^t \pi\bp{s^t} u_c \bp{s^t} c\bp{s^t}  \\
+                    \text{RHS:} \quad & \sum_{t,s^t} q^0\bp{s^t} \bp{1-\tau\bp{s^t}} w\bp{s^t} \ell\bp{s^t} = -\frac{1}{u_c\bp{s^0}}\sum_{t,s^t}  \beta^t \pi\bp{s^t} u_{\ell} \bp{s^t} \ell\bp{s^t}
+                \end{align*}
+                \item Multiplying both sides by $u_c\bp{s^0}$ gives the \alb{implementability constraint}:
+                 \begin{align*}
+                    \sum_{t=0}^\infty \sum_{s^t} \beta^t \pi\bp{s^t} \bs{  u_c \bp{s^t} c\bp{s^t}  + u_{\ell} \bp{s^t} \ell\bp{s^t}}  = u_c \bp{s^0} a_0 \qquad \square
+                \end{align*}
+                \end{itemize}
+            \end{frame}
+            \begin{frame}{Step 3: The implementability constraint}
+                \begin{itemize}
+                    \item The \alb{implementability constraint}
+                    \begin{align*}
+                        \sum_{t=0}^\infty \sum_{s^t} \beta^t  \pi\bp{s^t} \bs{  u_c \bp{s^t} c\bp{s^t}  + u_{\ell} \bp{s^t} \ell\bp{s^t}}  = u_c \bp{s^0} a_0
+                    \end{align*}
+                summarizes household optimality conditions and the budget constraint.
+                \item \al{Prices, taxes, and debt have been eliminated.} The constraint involves \alg{only allocations} and the initial condition $a_0$.
+                \item Under the natural debt limit, it summarizes the \al{sequential} household problem as well.
+                \item The government can only choose allocations that satisfy this constraint.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The implementability constraint is sufficient}
+                \begin{itemize}
+                \item \al{Sufficiency:} if an \al{interior} allocation $\bp{c\bp{s^t}, \ell\bp{s^t}}$ satisfies the implementability constraint and the resource constraint, then there exist prices, taxes, and debt such that it is a competitive equilibrium.
+                \item \textbf{Proof.} Given an allocation, \al{construct} the equilibrium:
+                \begin{enumerate}
+                    \item Set wages: $w\bp{s^t} = A$ (from the firm problem).
+                    \item Set taxes: $\bp{1-\tau\bp{s^t}} = -\frac{u_\ell\bp{s^t}}{u_c\bp{s^t}} \frac{1}{A}$ (from the intratemporal FOC).
+                    \item Set Arrow prices: $q\bp{s^{t+1} \mid s^t} = \beta\,\pi\bp{s_{t+1}\mid s_t}\frac{u_c\bp{s^{t+1}}}{u_c\bp{s^t}}$.
+                \end{enumerate}
+                \item These choices make the firm FOC and the household intratemporal/intertemporal FOCs hold.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The implementability constraint is sufficient (cont.)}
+                \begin{itemize}
+                \item We still need Arrow-security holdings that satisfy the \al{sequential} household budget constraint at each history $s^t$.
+                \item Define
+                \begin{align*}
+                    x\bp{s^t} \equiv \sum_{j=0}^\infty \sum_{s^{t+j} \geq s^{t}} \beta^j \pi\bp{s^{t+j}\mid s^{t}} \bs{u_c\bp{s^{t+j}} c\bp{s^{t+j}} + u_\ell\bp{s^{t+j}} \ell\bp{s^{t+j}}}
+                \end{align*}
+                \item By construction, $x\bp{s^t}$ satisfies the recursion
+                \begin{align*}
+                    x\bp{s^t} = u_c\bp{s^t} c\bp{s^t} + u_\ell\bp{s^t} \ell\bp{s^t}
+                    + \beta \sum_{s^{t+1}\ge s^t} \pi\bp{s^{t+1}\mid s^t}\, x\bp{s^{t+1}}.
+                \end{align*}
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The implementability constraint is sufficient (cont.)}
+                \begin{itemize}
+                \item Set $a\bp{s^t} = x\bp{s^t}/u_c\bp{s^t}$. Using $u_\ell\bp{s^t} = -u_c\bp{s^t}\bp{1-\tau\bp{s^t}}A$ and the Arrow-price formula,
+                \begin{align*}
+                    c\bp{s^t} + \sum_{s^{t+1}\ge s^t} q\bp{s^{t+1}\mid s^t}\, a\bp{s^{t+1}}
+                    = \bp{1-\tau\bp{s^t}}A\ell\bp{s^t} + a\bp{s^t},
+                \end{align*}
+                so the household sequential budget constraint holds.
+                \item The implementability constraint gives $x\bp{s^0} = u_c\bp{s^0} a_0$, so the initial condition is satisfied.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The implementability constraint is sufficient (cont.)}
+                \begin{itemize}
+                \item Set government Arrow liabilities equal to household claims: $b\bp{s^t} = a\bp{s^t}$, so the Arrow-security market clears.
+                \item Using the resource constraint $A\ell\bp{s^t} = c\bp{s^t} + g\bp{s^t}$ and the household budget constraint:
+                \begin{align*}
+                    g\bp{s^t} + b\bp{s^t}
+                    = \tau\bp{s^t} A\ell\bp{s^t} + \sum_{s^{t+1}\ge s^t} q\bp{s^{t+1}\mid s^t}\, b\bp{s^{t+1}},
+                \end{align*}
+                which is exactly the government budget constraint.
+                \item Households optimize, firms optimize, markets clear, and the government budget constraint holds.
+                \item Therefore the allocation is part of a competitive equilibrium. $\square$
+                \item The implementability constraint $+$ resource constraint \al{fully characterize} the set of competitive equilibrium allocations.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Step 4: The Ramsey problem}
+            \begin{itemize}
+            \item The government chooses \alg{allocations} $c\bp{s^t},\ell\bp{s^t}$ to maximize the household's utility
+            \begin{align*}
+                \sum_{t=0}^\infty \sum_{s^t}  \beta^t \pi\bp{s^t} u\bp{c \bp{s^t},\ell\bp{s^t}}
+            \end{align*}
+            subject to the \alb{implementability constraint}:
+            \begin{align*}
+                \sum_{t=0}^\infty \sum_{s^t}  \beta^t \pi\bp{s^t} \bs{  u_c \bp{s^t} c\bp{s^t}  + u_{\ell} \bp{s^t} \ell\bp{s^t}}  = u_c \bp{s^0} a_0
+            \end{align*}
+            and \al{resource constraints}:
+            \begin{align*}
+            \forall s^t \quad   A \ell\bp{s^t} = g\bp{s^t} + c\bp{s^t}
+            \end{align*}
+            \end{itemize}
+            \end{frame}
+            %
+        \begin{frame}{Step 4: Full commitment}
+            \begin{itemize}
+            \item \alg{Full commitment}: the government announces its state-contingent plans at time 0 and cannot change them later.
+            \item Everyone else trusts the government and knows it will stick to its plans.
+            \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The pseudo-utility function $W$}
+            \begin{itemize}
+            \item Define the \alg{pseudo-utility function}:
+            \begin{align*}
+                W\bp{c\bp{s^t},\ell\bp{s^t},\Phi} \equiv u\bp{c\bp{s^t},\ell\bp{s^t}} + \Phi \bs{u_c\bp{s^t} c\bp{s^t} + u_{\ell}\bp{s^t} \ell\bp{s^t}}
+            \end{align*}
+            where $\Phi$ is the multiplier on the implementability constraint.
+            \item This absorbs the implementability constraint into the objective. The Ramsey problem becomes:
+            \begin{align*}
+                \max \sum_{t=0}^\infty \sum_{s^t} \beta^t \pi\bp{s^t}\, W\bp{c\bp{s^t},\ell\bp{s^t},\Phi} - \Phi\,u_c\bp{s^0} a_0
+                \quad \text{s.t.} \quad \forall s^t: \; A\ell\bp{s^t} = g\bp{s^t} + c\bp{s^t}
+            \end{align*}
+            \item The only constraints left are the \al{resource constraints} --- one for each state $s^t$.
+            \end{itemize}
+            \end{frame}
+
+            \begin{frame}{First order conditions via $W$}
+            \begin{itemize}
+            \item For $s^t > s^0$, the FOCs with respect to $c\bp{s^t}$ and $\ell\bp{s^t}$ are:
+            \begin{align*}
+              W_c\bp{s^t} & =  \mu \bp{s^t} \\
+              W_\ell\bp{s^t} & =  - \mu \bp{s^t} A
+            \end{align*}
+            where $\mu\bp{s^t}$ is the multiplier on the resource constraint for state $s^t$.
+            \item Written out:
+            \begin{align*}
+              u_c\bp{s^t} + \Phi \bs{ u_{cc} \bp{s^t} c\bp{s^t} + u_c \bp{s^t} + u_{c\ell} \bp{s^t} \ell\bp{s^t} }  & =  \mu \bp{s^t} \\
+              u_\ell\bp{s^t} +\Phi \bs{ u_{c\ell} \bp{s^t} c\bp{s^t} + u_\ell \bp{s^t} + u_{\ell\ell} \bp{s^t} \ell\bp{s^t} }  & =  - \mu \bp{s^t} A
+            \end{align*}
+            \end{itemize}
+            \end{frame}
+            %
+            \begin{frame}{$\Phi$ is the only link between states}
+                \begin{itemize}
+                \item For each state $s^t$, we have three equations in three unknowns $c\bp{s^t},\ell\bp{s^t},\mu\bp{s^t}$:
+                \begin{itemize}
+                    \item two FOCs: $W_c\bp{s^t} = \mu\bp{s^t}$, $W_\ell\bp{s^t} = -\mu\bp{s^t} A$;
+                    \item one resource constraint: $A\ell\bp{s^t} = g\bp{s^t} + c\bp{s^t}$.
+                \end{itemize}
+                \item $\Phi$ is the \al{only} link between different states $s^t$.
+                \item Once we know $\Phi$, allocations for each $s^t$ are determined \al{separately}.
+                \item For two different histories with the same current state $s_t$, the solution must be the same!
+            \end{itemize}
+                \end{frame}
+        
+            \begin{frame}{Implications}
+                \begin{itemize}
+                \item What are the implications for taxes?
+                \item From household first order condition we have 
+                \begin{align*}
+                    \bp{1-\tau\bp{s^t}} w\bp{s^t} = - \frac{u_\ell\bp{s^t}}{u_c\bp{s^t}}
+                \end{align*}
+                and linear production technology implies $w\bp{s^t} = A$ so
+                \begin{align*}
+                    1-\tau\bp{s^t}  = - \frac{u_\ell\bp{c \bp{s^t},\ell\bp{s^t}}}{u_c\bp{c \bp{s^t},\ell\bp{s^t}}} \frac{1}{A}.
+                \end{align*}
+                \item We have solved for $c \bp{s^t},\ell\bp{s^t}$, we can get $\tau\bp{s^t}$!
+                \end{itemize}
+            \end{frame}
+                    
+            \begin{frame}{Implications}
+                \begin{itemize}
+                \item Since for two different histories with the same current state $s_t$, consumption and labor are the same -- taxes must be the same!
+                \item \alg{Conclusion:} very different from Barro (1979) -- no history dependence.
+                \item If government purchases are i.i.d., taxes are i.i.d. as well.
+                \item Contrast with the \alb{incomplete markets case}: taxes were a random walk.
+                \end{itemize}
+            \end{frame}
+        
+            \begin{frame}{Taxes are not fully smoothed in general}
+                \begin{itemize}
+                \item Unlike Barro (1979), taxes are not generally constant --- they depend on the current state.
+                \item When $g_t$ is high, the government may want to \al{increase} labor supply to finance it without a large drop in consumption.
+                \end{itemize}
+            \end{frame}
+        
+        
+            \begin{frame}{Example: separable preferences with linear disutility of labor}
+                \begin{itemize}
+                \item Let $u\bp{c,\ell} = \frac{c^{1-\gamma}}{1-\gamma} - \psi \ell $.
+                \item The pseudo-utility function is
+                \begin{align*}
+                    W\bp{c\bp{s^t},\ell\bp{s^t},\Phi} = \frac{c\bp{s^t}^{1-\gamma}}{1-\gamma} - \psi \ell\bp{s^t} + \Phi\bs{c\bp{s^t}^{1-\gamma} - \psi \ell\bp{s^t}}
+                \end{align*}
+                \item The FOCs $W_c = \mu\bp{s^t}$, $W_\ell = -\mu\bp{s^t} A$ become:
+                  \begin{align*}
+                    \bs{1+\Phi\bp{1-\gamma}} c\bp{s^t}^{-\gamma} & =  \mu \bp{s^t} \\
+                    \bs{1+\Phi}\psi & =   \mu \bp{s^t} A
+                  \end{align*}
+                \end{itemize}
+            \end{frame}
+        
+            \begin{frame}{Example}
+                \begin{itemize}
+                \item For each state $s^t>s^0$ we have:
+                \begin{align*}
+                    \frac{1+\Phi}{\bs{1+\Phi\bp{1-\gamma}}A}\psi & =   c\bp{s^t}^{-\gamma}
+                \end{align*}
+                so consumption is constant.
+                \item Taxes satisfy  
+                \begin{align*}
+                1-\tau\bp{s^t}  =  \frac{\psi}{c\bp{s^t}^{-\gamma}} \frac{1}{A}:
+                \end{align*}
+                since $c\bp{s^t}$ is constant, taxes are \al{constant} as well.
+                \item With these preferences households supply labor fully elastically, fluctuations in $g_t$ are absorbed by changes in production.
+                \end{itemize}
+            \end{frame}
+            
+            \begin{frame}{Lessons}
+                \begin{itemize}
+                \item \al{Remember:} the above result is \al{not} general.
+                \item What is general is that allocations and taxes are \al{history independent} --- they are fully determined by the \alg{current} state $s_t$.
+                \item What about the optimal path of \al{debt}?
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Arrow prices are pinned down by allocations}
+                \begin{itemize}
+                \item Using the consumption FOCs together with $q^0\bp{s^{t+1}} = q^0\bp{s^t}\,q\bp{s^{t+1}\mid s^t}$:
+                \begin{align*}
+                    q\bp{s^{t+1} \mid s^t} = \beta\,\pi\bp{s_{t+1} \mid s_t}\,\frac{u_c\bp{s^{t+1}}}{u_c\bp{s^t}}
+                \end{align*}
+                \item Since allocations depend only on $s_t$, prices depend only on $\bp{s_t, s_{t+1}}$.
+                \item Once we solve the Ramsey problem for allocations, \al{all prices are determined}.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Timing within date $t$}
+                \begin{itemize}
+                \item Current history $s^t$ is observed.
+                \item The Arrow claim chosen at $t-1$ for the realized history $s^t$ pays $b\bp{s^t}$ at date $t$.
+                \item At the same date $t$, taxes $\tau\bp{s^t}A\ell\bp{s^t}$ are collected and government spending $g\bp{s^t}$ is paid.
+                \item The government then sells the new menu $\bc{b\bp{s^{t+1}}}_{s_{t+1}}$ for date $t+1$ and \al{receives} its date-$t$ market value $\sum_{s_{t+1}} q\bp{s^{t+1}\mid s^t}\, b\bp{s^{t+1}}$.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The government budget constraint pins down portfolio value}
+                \begin{itemize}
+                \item The government budget constraint for each history $s^t$:
+                \begin{align*}
+                    g\bp{s^t} + b\bp{s^t} = \tau\bp{s^t}\,A\,\ell\bp{s^t} + \sum_{s_{t+1}} q\bp{s^{t+1} \mid s^t}\, b\bp{s^{t+1}}
+                \end{align*}
+                \item Here $b\bp{s^t}$ is the payoff due today from last period's portfolio choice, while $\bc{b\bp{s^{t+1}}}_{s_{t+1}}$ is the menu sold today for tomorrow.
+                \item The term $\sum_{s_{t+1}} q\bp{s^{t+1}\mid s^t}\, b\bp{s^{t+1}}$ is the \alg{date-$t$ market value} of that newly issued continuation portfolio.
+                \item So this equation is same-date accounting under the timing convention above, not a separate law of motion for debt.
+                \item Once $g\bp{s^t}$, $\tau\bp{s^t}$, $\ell\bp{s^t}$, and $q\bp{s^{t+1} \mid s^t}$ are known from the Ramsey solution, it pins down the market value today; the full payoff menu is recovered next from $x\bp{s^t}$.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Define marginal-utility-adjusted debt $x\bp{s^t} \equiv u_c\bp{s^t}\,b\bp{s^t}$}
+                \begin{itemize}
+                \item Multiply the government budget constraint by $u_c\bp{s^t}$ and substitute Arrow prices:
+                \begin{align*}
+                    x\bp{s^t} = u_c\bp{s^t}\bs{\tau\bp{s^t} A\,\ell\bp{s^t} - g\bp{s^t}} + \beta \sum_{s_{t+1}} \pi\bp{s_{t+1} \mid s_t}\, x\bp{s^{t+1}}
+                \end{align*}
+                \item Under the Ramsey solution, allocations and Arrow prices depend only on the current state $s_t$, so the right-hand side depends on $s^t$ only through $s_t$.
+                \item Hence the inherited marginal-utility-adjusted payoff is also Markov: $x\bp{s^t}=x\bp{s_t}$. In vector form:
+                \begin{align*}
+                    \vec{x} = \vec{h} + \beta\, \Pi\, \vec{x}
+                \end{align*}
+                where $h\bp{s} \equiv u_c\bp{s}\bs{\tau\bp{s} A\,\ell\bp{s} - g\bp{s}}$ and $\Pi$ is the Markov transition matrix.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Recovering the next-period payoff menu}
+                \begin{itemize}
+                \item Solve $\vec{x} = \bp{I - \beta\,\Pi}^{-1}\,\vec{h}$ and recover the payoff promised for any realized state $s$ from
+                \[
+                    b\bp{s} = \frac{x\bp{s}}{u_c\bp{s}}.
+                \]
+                \item Interpretation in Markov notation: $b\bp{s_t}$ is the inherited payoff due today, while $\bc{b\bp{s_{t+1}}}_{s_{t+1}}$ is the menu chosen today for tomorrow's possible states.
+                \item Its date-$t$ market value is $V\bp{s_t} \equiv \sum_{s_{t+1}} q\bp{s_{t+1}\mid s_t}\, b\bp{s_{t+1}}$, and $x\bp{s_t} = u_c\bp{s_t}\,b\bp{s_t}$ is the marginal-utility-adjusted payoff.
+                \item Each promised payoff depends only on the successor state $s_{t+1}$, not on the full history $s^t$: the issued menu is \alg{history independent}.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{A finite-state Lucas-Stokey example}
+                \begin{figure}
+                    \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{lucas_stokey_example/ls_state_objects.png}
+                    \captionsetup{font=scriptsize}
+                    \caption{Three-state Markov example with $u(c,\ell)=\log c + \psi \log(1-\ell)$ and target peace-state payoff $b(\text{peace})=0.15$. The four panels show government spending, the tax rate, tax revenue, and net portfolio cash flow $-b(s)$, where positive values mean receipts by the government.}
+                \end{figure}
+            \end{frame}
+
+            \begin{frame}{Alternative example: quasi-linear utility}
+                \begin{figure}
+                    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{lucas_stokey_example/ls_quasilinear_example.png}
+                    \captionsetup{font=scriptsize}
+                    \caption{With $u(c,\ell)=c-\psi \ell^{1+\chi}/(1+\chi)$ and high labor curvature $\chi=8$, $u_c$ is constant. Tax rates are flat across states, while net portfolio cash flow adjusts to absorb the fiscal shock.}
+                \end{figure}
+            \end{frame}
+
+            \begin{frame}{Alternative example: log utility, linear labor}
+                \begin{figure}
+                    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{lucas_stokey_example/ls_loglinear_example.png}
+                    \captionsetup{font=scriptsize}
+                    \caption{With $u(c,\ell)=\log c-\psi \ell$, the tax rate is constant across states, while tax revenue and net portfolio cash flow respond to $g$.}
+                \end{figure}
+            \end{frame}
+
+            \begin{frame}{Alternative example: GHH utility}
+                \begin{figure}
+                    \includegraphics[width=\textwidth,height=0.68\textheight,keepaspectratio]{lucas_stokey_example/ls_ghh_example.png}
+                    \captionsetup{font=scriptsize}
+                    \caption{With $u(c,\ell)=\log\!\left(c-\kappa \ell^{1+\nu}/(1+\nu)\right)$, the tax formula becomes $1-\tau(s)=\kappa \ell(s)^\nu/A$. In this calibration, high $g$ lowers tax rates and raises net portfolio receipts.}
+                \end{figure}
+            \end{frame}
+
+            \begin{frame}{State-contingent debt as insurance}
+                \begin{itemize}
+                \item The government chooses a \alg{portfolio of state-contingent positions} --- a separate payoff for each possible next-period state $s_{t+1}$.
+                \item In the examples, the net portfolio cash flow is \al{more positive} in high-$g$ states and \al{more negative} in low-$g$ states.
+                \item Effect: the government hedges fiscal shocks, helping keep taxes smoother across states.
+                \item Contrast with \alb{incomplete markets}: without state-contingent debt, the government cannot hedge $\Rightarrow$ taxes drift as a random walk.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{History independence in a simulated path}
+                \begin{figure}
+                    \includegraphics[width=\textwidth,height=0.70\textheight,keepaspectratio]{lucas_stokey_example/ls_simulated_path.png}
+                    \captionsetup{font=scriptsize}
+                    \caption{A simulated path from the same three-state Markov chain. Whenever the economy revisits a state, the same spending realization, tax rate, tax revenue, and net portfolio cash flow recur.}
+                \end{figure}
+            \end{frame}
+
+            \begin{frame}
+                \heading{Time inconsistency and portfolio commitment}
+            \end{frame}
+
+            \begin{frame}{The time-0 FOC is different}
+                \begin{itemize}
+                \item The FOC for $c\bp{s^0}$ at $t=0$ has an \al{extra term} compared to $t \geq 1$:
+                \footnotesize
+                 \begin{align*}
+                    W_c\bp{s^0} \underbrace{- \Phi\, u_{cc}\bp{s^0}\, a_0}_{\text{extra term}}  & =  \mu \bp{s^0} \\
+                    W_\ell\bp{s^0} \underbrace{- \Phi\, u_{c\ell}\bp{s^0}\, a_0}_{\text{extra term}}  & =  - \mu \bp{s^0} A
+                  \end{align*}
+                  \normalsize
+                \item This term comes from differentiating the $u_c\bp{s^0} a_0$ term in the implementability constraint.
+                \item Time-0 allocations differ from $t \geq 1$, even with the same $g$.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{The capital levy on initial debt}
+                \begin{itemize}
+                \item The extra term gives the time-0 government an incentive to \al{manipulate $u_c\bp{s^0}$} to reduce the effective burden of inherited debt $a_0$.
+                \begin{itemize}
+                    \item For example: policies that raise $c\bp{s^0}$ lower $u_c\bp{s^0}$, making debt cheaper to repay.
+                    \item This is a \alg{capital levy}: expropriating initial debt holders through current taxes and allocations that change $u_c\bp{s^0}$.
+                \end{itemize}
+                \item This is \alg{good for welfare}: it allows lower tax distortions in all future periods.
+                \item This is a special \alg{time-0} issue: the initial debt position is inherited, not chosen by the planner.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Why tax plans alone are not time-consistent}
+                \begin{itemize}
+                \item Suppose the date-1 government inherited only goods debt $b\bp{s^1}$, but no debt portfolio designed to shape continuation incentives.
+                \item It would face the \al{same} temptation: by changing $u_c\bp{s^1}$, it can reduce the burden of that inherited debt.
+                \item Then period 1 would ``look like period 0'' --- the same extra term appears.
+                \item So a list of future tax allocations by itself is \al{not} enough to make the Ramsey continuation time-consistent.
+                \item Lucas-Stokey's idea is to choose debt so that the continuation planner instead inherits the \al{right} state $x\bp{s^1}=u_c\bp{s^1}b\bp{s^1}$.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{When does the period-0 capital levy vanish?}
+                \begin{itemize}
+                \item The extra term $-\Phi\, u_{cc}\bp{s^0}\, a_0$ vanishes in three special cases:
+                \begin{enumerate}
+                    \item $a_0 = 0$: no initial debt to levy on.
+                    \item $u_c$ is constant (quasi-linear preferences): the government \al{cannot} manipulate marginal utility.
+                    \item $\Phi = 0$: initial government assets are large enough that the first-best is attainable.
+                \end{enumerate}
+                \item These cases remove the \al{period-0} capital-levy motive, but they are not the main Lucas-Stokey result.
+                \item Their main question is whether debt commitments can make \al{later} governments continue the optimal tax policy.
+                \item That requires the inherited continuation state $x\bp{s^t}=u_c\bp{s^t}b\bp{s^t}$ to be pinned down by earlier debt choices.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Continuation planner after a history $s^t$}
+                \begin{itemize}
+                \item Write the continuation problem after a realized history $s^t=\bp{s_0,\dots,s_t}$.
+                \item The inherited endogenous state is $x\bp{s^t}\equiv u_c\bp{s^t}\,b\bp{s^t}$.
+                \item The planner chooses current labor $\ell\bp{s^t}$ and a full menu of promised continuation states $\bc{x\bp{s^{t+1}}}_{s^{t+1}\ge s^t}$.
+                \scriptsize
+                \begin{align*}
+                    V\bp{x\bp{s^t}, s^t}
+                    &=
+                    \max_{\ell\bp{s^t},\,\bc{x\bp{s^{t+1}}}_{s^{t+1}\ge s^t}}
+                    u\bp{A\ell\bp{s^t}-g\bp{s^t},\, \ell\bp{s^t}} \\
+                    &\qquad + \beta \sum_{s_{t+1}} \pi\bp{s_{t+1}\mid s_t}\,
+                    V\bp{x\bp{s^{t+1}}, s^{t+1}}
+                \end{align*}
+                subject to
+                \begin{align*}
+                    x\bp{s^t}
+                    &=
+                    u_c\bp{s^t}\bp{A\ell\bp{s^t}-g\bp{s^t}}
+                    + u_\ell\bp{s^t}\,\ell\bp{s^t} \\
+                    &\qquad + \beta \sum_{s_{t+1}} \pi\bp{s_{t+1}\mid s_t}\,
+                    x\bp{s^{t+1}}.
+                \end{align*}
+                \normalsize
+                \item Because $g_t$ is Markov, future probabilities depend on the history only through $s_t$.
+                \item With inherited $x\bp{s^t}$ fixed, the date-$t$ government solves its own Ramsey problem from that state.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Time-0 planner: inherited debt is $b_0$, not $x\bp{s^0}$}
+                \begin{itemize}
+                \item At time 0, the government inherits goods debt $b_0$.
+                \item It does \al{not} inherit $x\bp{s^0}$, because $x\bp{s^0}=u_c\bp{s^0}b_0$ depends on the current allocation choice.
+                \footnotesize
+                \begin{align*}
+                    W\bp{b_0, s^0}
+                    &=
+                    \max_{\ell\bp{s^0},\,\bc{x\bp{s^1}}_{s^1\ge s^0}}
+                    u\bp{A\ell\bp{s^0}-g\bp{s^0},\, \ell\bp{s^0}} \\
+                    &\qquad + \beta \sum_{s_1} \pi\bp{s_1\mid s_0}\,
+                    V\bp{x\bp{s^1}, s^1}
+                \end{align*}
+                subject to
+                \begin{align*}
+                    u_c\bp{s^0}\,b_0
+                    &=
+                    u_c\bp{s^0}\bp{A\ell\bp{s^0}-g\bp{s^0}}
+                    + u_\ell\bp{s^0}\,\ell\bp{s^0} \\
+                    &\qquad + \beta \sum_{s_1} \pi\bp{s_1\mid s_0}\,
+                    x\bp{s^1}.
+                \end{align*}
+                \normalsize
+                \item Period 0 is special: it can manipulate $u_c\bp{s^0}$ and hence the inherited burden $u_c\bp{s^0}b_0$.
+                \item So time 0 chooses the menu $\bc{x\bp{s^1}}_{s^1\ge s^0}$: this is how it uses debt, rather than direct promises about future tax rates, to shape continuation incentives.
+                \end{itemize}
+            \end{frame}
+
+            \begin{frame}{Choosing promised continuation states history by history}
+                \begin{itemize}
+                \item Fix a current history $s^t$. The continuation planner chooses one promise $x\bp{s^{t+1}}$ for \al{each} successor history $s^{t+1}\ge s^t$.
+                \item The first order condition with respect to each promise is
+                \begin{align*}
+                    V_x\bp{x\bp{s^{t+1}},\, s^{t+1}} = \Psi\bp{s^t}
+                    \qquad \forall s^{t+1}\ge s^t,
+                \end{align*}
+                where $\Psi\bp{s^t}$ is the multiplier on the recursive implementability constraint at history $s^t$.
+                \item So all successor histories branching from the same current history share the same shadow value $\Psi\bp{s^t}$.
+                \item To make the plan time-consistent, the planner wants to pick those successor promises so that each date-$(t+1)$ government inherits exactly the $x\bp{s^{t+1}}$ for which the intended continuation solves its own problem.
+                \item Only after writing the problem this way can we use the Markov structure to conclude that, in equilibrium, $x\bp{s^t}$ can be written as a function of the current state $s_t$ alone.
+                \end{itemize}
+            \end{frame}
+
+	            \begin{frame}{What the planner commits to}
+	                \begin{itemize}
+	                \item At time 0, the government chooses a full menu of one-period Arrow claims $\bc{b\bp{s^1}}_{s^1\ge s^0}$, one for each successor history $s^1$.
+	                \item Equivalently, it chooses the inherited continuation states
+	                \[
+	                x\bp{s^1} \equiv u_c\bp{s^1}\,b\bp{s^1}
+	                \qquad \text{for all } s^1 \ge s^0.
+	                \]
+	                \item This is the commitment: debt is binding, but future tax choices are not.
+	                \item After one particular history $s^1$ is realized, the continuation planner at that history takes \al{that} inherited value $x\bp{s^1}$ as given.
+	                \item It can choose future promises $\bc{x\bp{s^2}}_{s^2\ge s^1}$, but it cannot go back and change the inherited object $x\bp{s^1}$.
+	                \end{itemize}
+	            \end{frame}
+
+	            \begin{frame}{How debt makes the plan time-consistent}
+	                \begin{itemize}
+                \item If the time-0 planner picks $\bc{x\bp{s^1}}_{s^1\ge s^0}$ so that
+                \[
+                V_x\bp{x\bp{s^1}, s^1} = \Psi\bp{s^0}
+                \qquad \forall s^1 \ge s^0,
+                \]
+	                then every continuation planner voluntarily implements the promised Ramsey continuation.
+	                \item Then successor governments continue the promised Ramsey tax policy, even though they re-optimize.
+	                \item This is the Lucas-Stokey result: date 0 may be special because $b_0$ is inherited, but later governments continue the plan once the debt structure is chosen correctly.
+	                \item In the recursive notation, the portfolio does this by pinning down the inherited state variable at each successor history.
+	                \item The continuation planner is free to optimize going forward, but not to undo the inherited portfolio position chosen earlier.
+	                \end{itemize}
+	            \end{frame}
+
+            \begin{frame}{Summary: the Lucas-Stokey result}
+                \begin{itemize}
+                \item An exogenous time-0 debt position creates a capital-levy motive at date 0.
+                \item Lucas-Stokey's main result is different: with a rich enough set of debt instruments, successor governments continue the optimal tax policy.
+                \item The key variable is $x\bp{s} = u_c\bp{s}\,b\bp{s}$: marginal-utility-adjusted debt.
+                \item The time-0 planner sets $x\bp{s}$ for each state so that every continuation planner inherits the state for which reproducing the original Ramsey continuation is optimal.
+	                \item \al{Without} complete markets (Aiyagari, Marcet, Sargent, Sepp\"al\"a, 2002), the multiplier $\Phi$ becomes time-varying and history-dependent --- the government \al{cannot} fully commit via the debt portfolio.
+                \end{itemize}
+            \end{frame}
+\end{document}
