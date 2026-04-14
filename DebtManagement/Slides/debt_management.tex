@@ -782,8 +782,8 @@
                     W_\ell\bp{s^0} \underbrace{- \Phi\, u_{c\ell}\bp{s^0}\, a_0}_{\text{extra term}}  & =  - \mu \bp{s^0} A
                   \end{align*}
                   \normalsize
-                \item This term comes from differentiating the $u_c\bp{s^0} a_0$ term in the implementability constraint.
-                \item Time-0 allocations differ from $t \geq 1$, even with the same $g$.
+                \item This term comes from differentiating the inherited term $u_c\bp{s^0} a_0$ in the implementability constraint.
+                \item So period 0 is special: the government in office inherits \al{today's} debt burden, while later governments inherit a debt position that period 0 can restructure.
                 \end{itemize}
             \end{frame}
 
@@ -794,50 +794,38 @@
                     \item For example: policies that raise $c\bp{s^0}$ lower $u_c\bp{s^0}$, making debt cheaper to repay.
                     \item This is a \alg{capital levy}: expropriating initial debt holders through current taxes and allocations that change $u_c\bp{s^0}$.
                 \end{itemize}
-                \item This is \alg{good for welfare}: it allows lower tax distortions in all future periods.
-                \item This is a special \alg{time-0} issue: the initial debt position is inherited, not chosen by the planner.
+                \item In Ramsey terms, this relaxes future tax distortions.
+                \item But this is only the \alg{date-0} issue. Lucas-Stokey's main question is different: how should debt be restructured so later governments \al{want} to continue the plan?
                 \end{itemize}
             \end{frame}
 
-            \begin{frame}{Why tax plans alone are not time-consistent}
+            \begin{frame}{How Lucas-Stokey define time consistency}
                 \begin{itemize}
-                \item Suppose the date-1 government inherited only goods debt $b\bp{s^1}$, but no debt portfolio designed to shape continuation incentives.
-                \item It would face the \al{same} temptation: by changing $u_c\bp{s^1}$, it can reduce the burden of that inherited debt.
-                \item Then period 1 would ``look like period 0'' --- the same extra term appears.
-                \item So a list of future tax allocations by itself is \al{not} enough to make the Ramsey continuation time-consistent.
-                \item Lucas-Stokey's idea is to choose debt so that the continuation planner instead inherits the \al{right} state $x\bp{s^1}=u_c\bp{s^1}b\bp{s^1}$.
+                \item In the paper, the date-0 government chooses the current tax, announces future taxes, and \alg{restructures debt} to be inherited at date 1.
+                \item At date 1, the successor government must honor that inherited debt, but it is otherwise free to choose the current tax, announce later taxes, and restructure debt again.
+                \item The Ramsey plan is \alg{time-consistent} if, after every realized history, the successor government voluntarily re-chooses the same continuation.
+                \item So future tax announcements alone are \al{not} the commitment device. The relevant inherited object is the debt position left to the successor.
                 \end{itemize}
             \end{frame}
 
-            \begin{frame}{When does the period-0 capital levy vanish?}
+            \begin{frame}{What the date-0 planner is trying to do}
                 \begin{itemize}
-                \item The extra term $-\Phi\, u_{cc}\bp{s^0}\, a_0$ vanishes in three special cases:
-                \begin{enumerate}
-                    \item $a_0 = 0$: no initial debt to levy on.
-                    \item $u_c$ is constant (quasi-linear preferences): the government \al{cannot} manipulate marginal utility.
-                    \item $\Phi = 0$: initial government assets are large enough that the first-best is attainable.
-                \end{enumerate}
-                \item These cases remove the \al{period-0} capital-levy motive, but they are not the main Lucas-Stokey result.
-                \item Their main question is whether debt commitments can make \al{later} governments continue the optimal tax policy.
-                \item That requires the inherited continuation state $x\bp{s^t}=u_c\bp{s^t}b\bp{s^t}$ to be pinned down by earlier debt choices.
+                \item In the time-consistency exercise, date 0 cannot directly bind future tax rates.
+                \item What it \al{can} choose is the debt position inherited by date 1.
+                \item Goal: leave each successor government with inherited debt for which the intended Ramsey continuation solves that government's own problem.
+                \item In our recursive notation, the inherited object is
+                \[
+                    x\bp{s^{t+1}} = u_c\bp{s^{t+1}} b\bp{s^{t+1}}.
+                \]
                 \end{itemize}
             \end{frame}
 
-            \begin{frame}{Continuation planner after a history $s^t$}
+            \begin{frame}{Continuation planner at history $s^t$}
                 \begin{itemize}
-                \item Write the continuation problem after a realized history $s^t=\bp{s_0,\dots,s_t}$.
-                \item The inherited endogenous state is $x\bp{s^t}\equiv u_c\bp{s^t}\,b\bp{s^t}$.
-                \item The planner chooses current labor $\ell\bp{s^t}$ and a full menu of promised continuation states $\bc{x\bp{s^{t+1}}}_{s^{t+1}\ge s^t}$.
-                \scriptsize
-                \begin{align*}
-                    V\bp{x\bp{s^t}, s^t}
-                    &=
-                    \max_{\ell\bp{s^t},\,\bc{x\bp{s^{t+1}}}_{s^{t+1}\ge s^t}}
-                    u\bp{A\ell\bp{s^t}-g\bp{s^t},\, \ell\bp{s^t}} \\
-                    &\qquad + \beta \sum_{s_{t+1}} \pi\bp{s_{t+1}\mid s_t}\,
-                    V\bp{x\bp{s^{t+1}}, s^{t+1}}
-                \end{align*}
-                subject to
+                \item After a realized history $s^t$, the inherited state is $x\bp{s^t}\equiv u_c\bp{s^t}b\bp{s^t}$.
+                \item Given this state, the date-$t$ government chooses current labor and the menu $\bc{x\bp{s^{t+1}}}_{s^{t+1}\ge s^t}$ left to successors.
+                \item The recursive implementability constraint is
+                \small
                 \begin{align*}
                     x\bp{s^t}
                     &=
@@ -847,25 +835,20 @@
                     x\bp{s^{t+1}}.
                 \end{align*}
                 \normalsize
-                \item Because $g_t$ is Markov, future probabilities depend on the history only through $s_t$.
-                \item With inherited $x\bp{s^t}$ fixed, the date-$t$ government solves its own Ramsey problem from that state.
+                \item Given inherited $x\bp{s^t}$, the date-$t$ government solves \al{its own} Ramsey problem from that state.
                 \end{itemize}
             \end{frame}
 
-            \begin{frame}{Time-0 planner: inherited debt is $b_0$, not $x\bp{s^0}$}
+            \begin{frame}{Time-0 planner: inherits $b_0$, not $x\bp{s^0}$}
                 \begin{itemize}
-                \item At time 0, the government inherits goods debt $b_0$.
-                \item It does \al{not} inherit $x\bp{s^0}$, because $x\bp{s^0}=u_c\bp{s^0}b_0$ depends on the current allocation choice.
-                \footnotesize
-                \begin{align*}
-                    W\bp{b_0, s^0}
-                    &=
-                    \max_{\ell\bp{s^0},\,\bc{x\bp{s^1}}_{s^1\ge s^0}}
-                    u\bp{A\ell\bp{s^0}-g\bp{s^0},\, \ell\bp{s^0}} \\
-                    &\qquad + \beta \sum_{s_1} \pi\bp{s_1\mid s_0}\,
-                    V\bp{x\bp{s^1}, s^1}
-                \end{align*}
-                subject to
+                \item At date 0, the government inherits goods debt $b_0$.
+                \item It does \al{not} inherit a predetermined $x\bp{s^0}$, because
+                \[
+                    x\bp{s^0}=u_c\bp{s^0}b_0
+                \]
+                depends on the current allocation.
+                \item Its recursive implementability constraint is
+                \small
                 \begin{align*}
                     u_c\bp{s^0}\,b_0
                     &=
@@ -875,8 +858,7 @@
                     x\bp{s^1}.
                 \end{align*}
                 \normalsize
-                \item Period 0 is special: it can manipulate $u_c\bp{s^0}$ and hence the inherited burden $u_c\bp{s^0}b_0$.
-                \item So time 0 chooses the menu $\bc{x\bp{s^1}}_{s^1\ge s^0}$: this is how it uses debt, rather than direct promises about future tax rates, to shape continuation incentives.
+                \item So period 0 is special: it can manipulate the inherited burden $u_c\bp{s^0}b_0$ and choose the menu $\bc{x\bp{s^1}}_{s^1\ge s^0}$ left to date 1.
                 \end{itemize}
             \end{frame}
 
@@ -890,46 +872,38 @@
                 \end{align*}
                 where $\Psi\bp{s^t}$ is the multiplier on the recursive implementability constraint at history $s^t$.
                 \item So all successor histories branching from the same current history share the same shadow value $\Psi\bp{s^t}$.
-                \item To make the plan time-consistent, the planner wants to pick those successor promises so that each date-$(t+1)$ government inherits exactly the $x\bp{s^{t+1}}$ for which the intended continuation solves its own problem.
-                \item Only after writing the problem this way can we use the Markov structure to conclude that, in equilibrium, $x\bp{s^t}$ can be written as a function of the current state $s_t$ alone.
+                \item To make the plan time-consistent, the planner picks those promises so each date-$(t+1)$ government inherits the state for which the intended continuation solves \al{its own} problem.
+                \item This is the recursive version of choosing the restructured debt left to the successor in Lucas-Stokey.
                 \end{itemize}
             \end{frame}
 
 	            \begin{frame}{What the planner commits to}
 	                \begin{itemize}
-	                \item At time 0, the government chooses a full menu of one-period Arrow claims $\bc{b\bp{s^1}}_{s^1\ge s^0}$, one for each successor history $s^1$.
-	                \item Equivalently, it chooses the inherited continuation states
-	                \[
-	                x\bp{s^1} \equiv u_c\bp{s^1}\,b\bp{s^1}
-	                \qquad \text{for all } s^1 \ge s^0.
-	                \]
-	                \item This is the commitment: debt is binding, but future tax choices are not.
+	                \item In our complete-markets sequential notation, time 0 chooses the menu $\bc{b\bp{s^1}}_{s^1\ge s^0}$, or equivalently the inherited states $\bc{x\bp{s^1}=u_c\bp{s^1}b\bp{s^1}}_{s^1\ge s^0}$.
+	                \item This is the recursive counterpart of Lucas-Stokey's ``rich enough'' maturity/state-contingent debt structure.
+	                \item This is the commitment: \al{debt is binding, but future tax choices are not}.
 	                \item After one particular history $s^1$ is realized, the continuation planner at that history takes \al{that} inherited value $x\bp{s^1}$ as given.
-	                \item It can choose future promises $\bc{x\bp{s^2}}_{s^2\ge s^1}$, but it cannot go back and change the inherited object $x\bp{s^1}$.
+	                \item It can choose future promises $\bc{x\bp{s^2}}_{s^2\ge s^1}$, but it cannot change the inherited object $x\bp{s^1}$.
+	                \item So the commitment technology is the inherited debt portfolio, not a direct command over successors' tax rates.
 	                \end{itemize}
 	            \end{frame}
 
 	            \begin{frame}{How debt makes the plan time-consistent}
 	                \begin{itemize}
-                \item If the time-0 planner picks $\bc{x\bp{s^1}}_{s^1\ge s^0}$ so that
-                \[
-                V_x\bp{x\bp{s^1}, s^1} = \Psi\bp{s^0}
-                \qquad \forall s^1 \ge s^0,
-                \]
-	                then every continuation planner voluntarily implements the promised Ramsey continuation.
-	                \item Then successor governments continue the promised Ramsey tax policy, even though they re-optimize.
-	                \item This is the Lucas-Stokey result: date 0 may be special because $b_0$ is inherited, but later governments continue the plan once the debt structure is chosen correctly.
-	                \item In the recursive notation, the portfolio does this by pinning down the inherited state variable at each successor history.
-	                \item The continuation planner is free to optimize going forward, but not to undo the inherited portfolio position chosen earlier.
+	                \item Date 0 chooses the inherited state left to each successor history.
+	                \item It chooses those states so that, after any realized $s^1$, the intended continuation solves the date-1 government's own continuation problem.
+	                \item Successor governments therefore re-optimize \al{into} the Ramsey continuation, rather than obeying an externally imposed tax plan.
+	                \item This is Lucas-Stokey's result: debt commitments can substitute for direct commitment to future tax rates when the debt menu is rich enough.
+	                \item In recursive notation, the portfolio does this by pinning down the inherited state variable at each successor history.
 	                \end{itemize}
 	            \end{frame}
 
             \begin{frame}{Summary: the Lucas-Stokey result}
                 \begin{itemize}
                 \item An exogenous time-0 debt position creates a capital-levy motive at date 0.
-                \item Lucas-Stokey's main result is different: with a rich enough set of debt instruments, successor governments continue the optimal tax policy.
+                \item Lucas-Stokey's main result is different: with a rich enough set of debt instruments, successor governments continue the optimal tax policy \al{because it is optimal for them to do so}.
                 \item The key variable is $x\bp{s} = u_c\bp{s}\,b\bp{s}$: marginal-utility-adjusted debt.
-                \item The time-0 planner sets $x\bp{s}$ for each state so that every continuation planner inherits the state for which reproducing the original Ramsey continuation is optimal.
+                \item The date-0 planner is not really trying to bind future taxes; it is choosing inherited debt states so that reproducing the Ramsey continuation is each successor's own optimum.
 	                \item \al{Without} complete markets (Aiyagari, Marcet, Sargent, Sepp\"al\"a, 2002), the multiplier $\Phi$ becomes time-varying and history-dependent --- the government \al{cannot} fully commit via the debt portfolio.
                 \end{itemize}
             \end{frame}
