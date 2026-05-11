@@ -7,8 +7,10 @@ Office hours: by appointment
 
 
 ## Log and announcements 
-> [!IMPORTANT]
-> 29/3: Problem Set 1 posted [here](problem_sets/pset1.pdf). Solutions due April 15th, 11:59 PM.
++ 27/4: Debt maturity structure. 
++ 20/4: Debt management with incomplete markets: AMSS (2002)
++ 13/4: Lucas and Stokey (1983)
++ 30/3: Optimal debt management: Barro's model.
 + 23/3: Debt sustainability: the asset pricing approach. SDF, GDP risk premium, fiscal capacity, convenience yields, and the government bond valuation puzzle (Jiang, Lustig, Van Nieuwerburgh & Xiaolan 2022, 2023).
 + 16/3: Debt sustainability: the intertemporal government budget constraint, no-Ponzi conditions, Bohn's fiscal reaction function, r vs g debate.
 + 9/3: Empirics of fiscal multipliers. Local projections, cross-sectional evidence, state-dependent multipliers.
