@@ -7,6 +7,9 @@ Office hours: by appointment
 
 
 ## Log and announcements 
+> [!IMPORTANT]
+> 1/6: Problem Set 2 posted [here](problem_sets/pset2.pdf). Solutions due June 16th, 11:59 PM.
+
 + 27/4: Debt maturity structure. 
 + 20/4: Debt management with incomplete markets: AMSS (2002)
 + 13/4: Lucas and Stokey (1983)
